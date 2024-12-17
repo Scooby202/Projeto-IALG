@@ -1,0 +1,11 @@
+#identificador(int),nome(string com espaço),apelido(string),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço),tempo de uso da academia
+3
+1,pedro silca,M,58,espanha,123,catalao,polo,banana
+2,livia silva,F,19,brasil,555,itanhandu,dormir,manga
+3,livia silva,F,19,brasil,555,itanhandu,dormir,manga
+4,pedro silca,M,58,espanha,123,catalao,polo,banana
+5,livia silva,F,19,brasil,555,itanhandu,dormir,manga
+6,livia silva,F,19,brasil,555,itanhandu,dormir,manga
+7,pedro silca,M,58,espanha,123,catalao,polo,banana
+8,livia silva,F,19,brasil,555,itanhandu,dormir,manga
+9,livia silva,F,19,brasil,555,itanhandu,dormir,manga
