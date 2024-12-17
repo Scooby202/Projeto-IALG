@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cstring>
 using namespace std;
-
+//cometario
 
 struct atletas
 {
