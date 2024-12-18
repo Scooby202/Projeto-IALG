@@ -81,16 +81,17 @@ int main()
 	}
 	int i = 0;
 	int identificador = 0;
-	while ( pessoas[i].identificador < qReg+5) {
-	    for (int i = 0; i < qReg+5; i++){
-	 
-		pessoas[i].identificador;
+	while ( pessoas[i].identificador < qReg+5) 
+	{
+	    for (int i = 0; i < qReg+5; i++)
+		{
+			pessoas[i].identificador;
 	    }
-		if ( pessoas[i].identificador >= qReg ){
-			red ( pessoas, qReg, entrada);
-			
+		if(pessoas[i].identificador >= qReg)
+		{
+			red ( pessoas, qReg, entrada);			
 		}
-      i++;
+      	i++;
 	}
 		
 	delete[] pessoas;
