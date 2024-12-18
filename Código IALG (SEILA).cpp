@@ -28,32 +28,26 @@ struct atletas
 	}
 };
 
-	void red ( atletas pessoas[], int qReg, ifstream &entrada ){
+void red ( atletas pessoas[], int qReg, ifstream &entrada )
+{
 		
 			
-		atletas *novoVetor = new atletas [qReg+5];
-		memcpy ( novoVetor, pessoas, sizeof(atletas)* qReg);
-		delete [] pessoas;
-		pessoas = novoVetor;
-		
-		for (int i = qReg; i < qReg+5 ; i++)
+	atletas *novoVetor = new atletas [qReg+5];
+	memcpy ( novoVetor, pessoas, sizeof(atletas)* qReg);
+	delete [] pessoas;
+	pessoas = novoVetor;
+	
+	for (int i = qReg; i < qReg+5 ; i++)
 	{
 		pessoas[i].escrita(entrada);
 	}
 		
 		
-		for(int i = 0; i < qReg+5; i++)
+	for(int i = 0; i < qReg+5; i++)
 	{
-		cout << pessoas[i].identificador << ' ' << pessoas[i].nome << ' '<< pessoas[i].sexo <<' '<<  pessoas[i].idade <<' '<<  pessoas[i].pais << ' '<<  pessoas[i].passaporte 
-		<<' '<<  pessoas[i].idioma <<' '<<  pessoas[i].modalidade <<' '<<  pessoas[i].preferenciaComida << endl;
+		cout << pessoas[i].identificador << ' ' << pessoas[i].nome << ' '<< pessoas[i].sexo <<' '<<  pessoas[i].idade <<' '<<  pessoas[i].pais << ' '<<  pessoas[i].passaporte <<' '<<  pessoas[i].idioma <<' '<<  pessoas[i].modalidade <<' '<<  pessoas[i].preferenciaComida << endl;
 	}
-		
-		
-	}
-
-
-
-
+}
 
 int main()
 {
@@ -98,10 +92,7 @@ int main()
 		}
       i++;
 	}
-	
-	
-	
-	
+		
 	delete[] pessoas;
 	return 0;
 }
