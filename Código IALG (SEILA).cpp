@@ -28,17 +28,29 @@ struct atletas
 	}
 };
 
-void redimensionamento (atletas pessoas[], int &tamanhoVet, ifstream &entrada )
+void redimensionamento (atletas pessoas[], int &tamanhoVet, ifstream &entrada)
 {	
 	tamanhoVet += 5;		
 	atletas *novoVetor = new atletas [tamanhoVet];
-	memcpy (novoVetor, pessoas, sizeof(atletas)* tamanhoVet-5);
+	memcpy(novoVetor, pessoas, sizeof(atletas)* tamanhoVet-5);
 	delete [] pessoas;
 	pessoas = novoVetor;
-	
-	for (int i = tamanhoVet - 5; i < tamanhoVet ; i++)
+}
+
+void escritaFuncao(atletas pessoas[], int &tamanhoVet, ifstream &entrada)
+{
+	int i = 0;
+	while (entrada)
 	{
-		pessoas[i].escrita(entrada);
+		if (i > tamanhoVet)
+		{
+			pessoas[i].escrita(entrada);
+			i++;
+		}
+		else
+		{
+			redimensionamento(pessoas, tamanhoVet, entrada);
+		}
 	}
 }
 
@@ -62,31 +74,8 @@ int main()
 	}
 	
 	atletas *pessoas = new atletas[tamanhoVet];
-	
-	for (int i = 0; i < qReg; i++)
-	{
-		pessoas[i].escrita(entrada);
-	}
-	
-	for(int i = 0; i < qReg; i++)
-	{
-		cout << pessoas[i].identificador << ' ' << pessoas[i].nome << ' '<< pessoas[i].sexo <<' '<<  pessoas[i].idade <<' '<<  pessoas[i].pais << ' '<<  pessoas[i].passaporte 
-		<<' '<<  pessoas[i].idioma <<' '<<  pessoas[i].modalidade <<' '<<  pessoas[i].preferenciaComida << endl;
-	}
-	int i = 0;
-	int identificador = 0;
-	while ( pessoas[i].identificador < qReg+5) 
-	{
-	    for (int i = 0; i < qReg+5; i++)
-		{
-			pessoas[i].identificador;
-	    }
-		if(pessoas[i].identificador >= qReg)
-		{
-			red ( pessoas, qReg, entrada);			
-		}
-      	i++;
-	}
+
+	escritaFuncao(pessoas, tamanhoVet, entrada);
 		
 	delete[] pessoas;
 	return 0;
