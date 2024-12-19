@@ -28,29 +28,23 @@ struct atletas
 	}
 };
 
-void red ( atletas pessoas[], int qReg, ifstream &entrada )
-{
-		
-			
-	atletas *novoVetor = new atletas [qReg+5];
-	memcpy ( novoVetor, pessoas, sizeof(atletas)* qReg);
+void redimensionamento (atletas pessoas[], int &tamanhoVet, ifstream &entrada )
+{	
+	tamanhoVet += 5;		
+	atletas *novoVetor = new atletas [tamanhoVet];
+	memcpy (novoVetor, pessoas, sizeof(atletas)* tamanhoVet-5);
 	delete [] pessoas;
 	pessoas = novoVetor;
 	
-	for (int i = qReg; i < qReg+5 ; i++)
+	for (int i = tamanhoVet - 5; i < tamanhoVet ; i++)
 	{
 		pessoas[i].escrita(entrada);
-	}
-		
-		
-	for(int i = 0; i < qReg+5; i++)
-	{
-		cout << pessoas[i].identificador << ' ' << pessoas[i].nome << ' '<< pessoas[i].sexo <<' '<<  pessoas[i].idade <<' '<<  pessoas[i].pais << ' '<<  pessoas[i].passaporte <<' '<<  pessoas[i].idioma <<' '<<  pessoas[i].modalidade <<' '<<  pessoas[i].preferenciaComida << endl;
 	}
 }
 
 int main()
 {
+	int tamanhoVet = 40;
 	int qReg = 0;
 	string linha;
 	
@@ -67,7 +61,7 @@ int main()
 		return 0;
 	}
 	
-	atletas *pessoas = new atletas[qReg];
+	atletas *pessoas = new atletas[tamanhoVet];
 	
 	for (int i = 0; i < qReg; i++)
 	{
