@@ -1,8 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
+#include <algorithm>
 using namespace std;
-
 
 struct atletas
 {
@@ -28,28 +27,30 @@ struct atletas
 	}
 };
 
-void redimensionamento (atletas pessoas[], int &tamanhoVet, ifstream &entrada)
+void redimensionamento (atletas* &pessoas, int &tamanhoVet)
 {	
-	tamanhoVet += 5;		
+	tamanhoVet += 5;
+	cout << tamanhoVet << endl;		
 	atletas *novoVetor = new atletas [tamanhoVet];
-	memcpy(novoVetor, pessoas, sizeof(atletas)* tamanhoVet-5);
+	copy(pessoas, pessoas+(tamanhoVet-5), novoVetor);
 	delete [] pessoas;
 	pessoas = novoVetor;
 }
 
-void escritaFuncao(atletas pessoas[], int &tamanhoVet, ifstream &entrada)
+void escritaFuncao(atletas *pessoas, int &tamanhoVet, ifstream &entrada, int qReg)
 {
+	atletas *novoVetor;
 	int i = 0;
-	while (entrada)
+	while (i < qReg)
 	{
-		if (i > tamanhoVet)
+		if (i < tamanhoVet)
 		{
 			pessoas[i].escrita(entrada);
 			i++;
 		}
 		else
 		{
-			redimensionamento(pessoas, tamanhoVet, entrada);
+			redimensionamento(pessoas, tamanhoVet);
 		}
 	}
 }
@@ -75,7 +76,14 @@ int main()
 	
 	atletas *pessoas = new atletas[tamanhoVet];
 
-	escritaFuncao(pessoas, tamanhoVet, entrada);
+	escritaFuncao(pessoas, tamanhoVet, entrada, qReg);
+
+	cout << tamanhoVet << endl;
+
+	for(int i = 0; i < qReg; i++)
+	{
+		cout << pessoas[i].identificador << ' ' << pessoas[i].nome << ' ' << pessoas[i].sexo << ' ' << pessoas[i].idade << ' ' << pessoas[i].pais << ' ' << pessoas[i].passaporte << ' ' << pessoas[i].idioma << ' ' << pessoas[i].modalidade << ' ' << pessoas[i].preferenciaComida << endl;
+	}
 		
 	delete[] pessoas;
 	return 0;
