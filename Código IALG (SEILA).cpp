@@ -77,8 +77,6 @@ int main()
 
 	escritaFuncao(pessoas, tamanhoVet, entrada, quantidadeDeRegistros);
 
-	cout << tamanhoVet << endl;
-
 	for(int i = 0; i < tamanhoVet; i++)
 	{
 		cout << pessoas[i].identificador << ' ' << pessoas[i].nome << ' ' << pessoas[i].sexo << ' ' << pessoas[i].idade << ' ' << pessoas[i].pais << ' ' << pessoas[i].passaporte << ' ' << pessoas[i].idioma << ' ' << pessoas[i].modalidade << ' ' << pessoas[i].preferenciaComida << endl;
