@@ -55,7 +55,6 @@ int leituraTipado(atletas* &pessoas, int &tamanhoVet, int &quantidadeDeRegistros
 		entrada.seekg (0, entrada.end);
     	quantidadeDeRegistros = entrada.tellg();
 		quantidadeDeRegistros /= 92;
-		cout << quantidadeDeRegistros;
 		entrada.seekg (0, entrada.beg);
 	}
 	else // mensagem de erro e retorno para o menu inicial
@@ -68,7 +67,6 @@ int leituraTipado(atletas* &pessoas, int &tamanhoVet, int &quantidadeDeRegistros
 	while (tamanhoVet < quantidadeDeRegistros)
 	{
 		redimensionamento(pessoas, tamanhoVet);
-		cout << tamanhoVet << endl;
 	}
 	
 	entrada.read((char *) (pessoas), sizeof(atletas) * quantidadeDeRegistros);
