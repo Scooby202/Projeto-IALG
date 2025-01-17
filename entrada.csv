@@ -1,4 +1,4 @@
-#identificador(int),nome(string com espaço),apelido(string),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço),tempo de uso da academia
+#identificador(int),nome(string com espaço),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço)
 48
 1,pedroooo silca,M,58,espanha,123,catalao,polo,bananaa
 2,livia,F,19,brasil,123,catalao,polo,ovo
