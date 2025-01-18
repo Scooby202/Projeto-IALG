@@ -37,12 +37,12 @@ void redimensionamento (atletas* &pessoas, int &tamanhoVet) // faz o processo de
 	pessoas = vetAux;
 }
 
-int leituraTipado(atletas* &pessoas, int &tamanhoVet, int &quantidadeDeRegistros)
+int leituraTipado(atletas* &pessoas, int &tamanhoVet, int &quantidadeDeRegistros) // função para a leitura dos dados vindos do arquivo tipado
 {
 	string nome;
 
 	cout << "======================================================================================================================" << endl << endl;
-	cout << "Digite o nome do arquivo: ";
+	cout << "Digite o nome do arquivo (adicione .txt ao final do nome): ";
 
 	cin >> nome;
 
@@ -81,7 +81,7 @@ int leituraCSV(atletas* &pessoas, int &tamanhoVet, int &quantidadeDeRegistros) /
 	string nome;
 
 	cout << "======================================================================================================================" << endl << endl;
-	cout << "Digite o nome do arquivo: ";
+	cout << "Digite o nome do arquivo (adicione .csv ao final do nome): ";
 
 	cin >> nome;
 
@@ -121,7 +121,7 @@ int leituraCSV(atletas* &pessoas, int &tamanhoVet, int &quantidadeDeRegistros) /
 	return 0;
 }
 
-void escritaTela(int quantidadeDeRegistros, atletas* pessoas) // responsável pela escrita de todo os registos feitos em tela
+void escritaTela(int quantidadeDeRegistros, atletas* pessoas) // responsável pela escrita de todos os registros feitos em tela
 {
 	cout << "======================================================================================================================" << endl << endl;
 
@@ -133,7 +133,7 @@ void escritaTela(int quantidadeDeRegistros, atletas* pessoas) // responsável pe
 	cout << endl;
 }
 
-void gravarDados(int quantidadeDeRegistros, atletas* pessoas)
+void gravarDados(int quantidadeDeRegistros, atletas* pessoas) // responsável por gravar resgistros em arquivo tipado ou csv
 {
 	int opcao;
 	string nome;
@@ -152,7 +152,7 @@ void gravarDados(int quantidadeDeRegistros, atletas* pessoas)
 		if (opcao == 1) // execução da gravação em um arquivo tipado
 		{
 			cout << "======================================================================================================================" << endl << endl;
-			cout << "Qual o nome do arquivo? (adicione .txt ao final do nome) ";
+			cout << "Qual o nome do arquivo? (adicione .txt ao final do nome): ";
 
 			cin >> nome;
 
@@ -169,7 +169,7 @@ void gravarDados(int quantidadeDeRegistros, atletas* pessoas)
 		else if (opcao == 2) // gravação em um arquivo csv
 		{
 			cout << "======================================================================================================================" << endl << endl;
-			cout << "Qual o nome do arquivo? (adicione .csv ao final do nome) ";
+			cout << "Qual o nome do arquivo? (adicione .csv ao final do nome): ";
 
 			cin >> nome;
 
@@ -251,7 +251,7 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &pessoa
 
 int main()
 {
-	int tamanhoVet = 40; // controlador do tamnho do vetor
+	int tamanhoVet = 40; // controlador do tamanho do vetor
 	int quantidadeDeRegistros = 0; // controlador da quantidade de registros
 	int opcao;
 	atletas *pessoas = new atletas[tamanhoVet]; // vetor que armazena os dados de registro
