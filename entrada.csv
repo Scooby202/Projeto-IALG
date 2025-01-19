@@ -1,50 +1,50 @@
 #identificador(int),nome(string com espaço),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço)
 48
-1,pedroooo silca,M,58,espanha,123,catalao,polo,bananaa
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,oooolivia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
-1,pedroooo silca,M,58,espanha,123,catalao,polo,banana
-2,livia,F,19,brasil,123,catalao,polo,ovo
-3,erick,M,78,franca,185,portugues,futebol,banana
+1,pedro,M,58,espanha,48,catalao,polo,bananaa
+2,livia,F,19,brasil,47,catalao,polo,ovo
+3,erick,M,78,franca,46,portugues,futebol,banana
+4,pedro,M,58,espanha,45,catalao,polo,banana
+5,livia,F,19,brasil,44,catalao,polo,ovo
+6,erick,M,78,franca,43,portugues,futebol,banana
+7,pedro,M,58,espanha,42,catalao,polo,banana
+8,livia,F,19,brasil,41,catalao,polo,ovo
+9,erick,M,78,franca,40,portugues,futebol,banana
+10,pedro,M,58,espanha,39,catalao,polo,banana
+11,livia,F,19,brasil,38,catalao,polo,ovo
+12,erick,M,78,franca,37,portugues,futebol,banana
+13,pedro,M,58,espanha,36,catalao,polo,banana
+14,livia,F,19,brasil,35,catalao,polo,ovo
+15,erick,M,78,franca,34,portugues,futebol,banana
+16,pedro,M,58,espanha,33,catalao,polo,banana
+17,livia,F,19,brasil,32,catalao,polo,ovo
+18,erick,M,78,franca,31,portugues,futebol,banana
+19,pedro,M,58,espanha,30,catalao,polo,banana
+20,livia,F,19,brasil,29,catalao,polo,ovo
+21,erick,M,78,franca,28,portugues,futebol,banana
+22,pedro,M,58,espanha,27,catalao,polo,banana
+23,livia,F,19,brasil,26,catalao,polo,ovo
+24,erick,M,78,franca,25,portugues,futebol,banana
+25,pedro,M,58,espanha,24,catalao,polo,banana
+26,livia,F,19,brasil,23,catalao,polo,ovo
+27,erick,M,78,franca,22,portugues,futebol,banana
+28,pedro,M,58,espanha,21,catalao,polo,banana
+29,livia,F,19,brasil,20,catalao,polo,ovo
+30,erick,M,78,franca,19,portugues,futebol,banana
+31,pedro,M,58,espanha,18,catalao,polo,banana
+32,livia,F,19,brasil,17,catalao,polo,ovo
+33,erick,M,78,franca,16,portugues,futebol,banana
+34,pedro,M,58,espanha,15,catalao,polo,banana
+35,livia,F,19,brasil,14,catalao,polo,ovo
+36,erick,M,78,franca,13,portugues,futebol,banana
+37,pedro,M,58,espanha,12,catalao,polo,banana
+38,livia,F,19,brasil,11,catalao,polo,ovo
+39,erick,M,78,franca,10,portugues,futebol,banana
+40,pedro,M,58,espanha,9,catalao,polo,banana
+41,oooolivia,F,19,brasil,8,catalao,polo,ovo
+42,erick,M,78,franca,7,portugues,futebol,banana
+43,pedro,M,58,espanha,6,catalao,polo,banana
+44,livia,F,19,brasil,5,catalao,polo,ovo
+45,erick,M,78,franca,4,portugues,futebol,banana
+46,pedro,M,58,espanha,3,catalao,polo,banana
+47,livia,F,19,brasil,2,catalao,polo,ovo
+48,erick,M,78,franca,1,portugues,futebol,banana
