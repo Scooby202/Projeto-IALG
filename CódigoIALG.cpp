@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-
+aaaaaaaaaa
 using namespace std;
 
 struct atletas // estrutura que guarda todas as informações de registro dos atletas
