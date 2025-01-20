@@ -1,5 +1,5 @@
 #identificador(int),nome(string com espaço),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço)
-48
+49
 1,pedro,M,58,espanha,48,catalao,polo,bananaa
 2,livia,F,19,brasil,47,catalao,polo,ovo
 3,erick,M,78,franca,46,portugues,futebol,banana
@@ -48,3 +48,4 @@
 46,pedro,M,58,espanha,3,catalao,polo,banana
 47,livia,F,19,brasil,2,catalao,polo,ovo
 48,erick,M,78,franca,1,portugues,futebol,banana
+49,Mauricio,M,19,brasil,123,portugues,futebol,pizza

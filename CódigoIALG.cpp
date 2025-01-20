@@ -253,6 +253,66 @@ int buscaBinariaPassaporte(int quantidadeDeRegistros, int procurado, atletas* re
     return posicao;
 }
 
+void removerRegistro(int &quantidadeDeRegistros, atletas* registros)
+{
+	int posicao;
+	int opcao;
+
+	do
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Qual a posição do registro que deseja remover? " << endl << endl;
+
+		cin >> posicao;
+
+		cout << endl;
+
+		if (posicao < 1 or posicao > quantidadeDeRegistros)
+		{
+			cout << "======================================================================================================================" << endl << endl;
+			cout << "Posição inexistente!!" << endl << endl;
+		}
+		
+	} while (posicao < 1 or posicao > quantidadeDeRegistros);
+	
+	posicao--;
+
+	do
+	{
+		cout << "Tem certeza que deseja remover o resgistro: " << registros[posicao].identificador << " " << registros[posicao].nome << " " << registros[posicao].sexo << " " << registros[posicao].idade << " " << registros[posicao].pais << " " << registros[posicao].passaporte << " " << registros[posicao].idioma << " " << registros[posicao].modalidade << " " << registros[posicao].preferenciaComida << "?" << endl << endl;
+		cout << "1. Sim" << endl << "2. Não" << endl << endl;
+		cout << "Selecione uma opção: ";
+
+		cin >> opcao;
+
+		cout << endl;
+
+		switch (opcao)
+		{
+		case 1:
+			quantidadeDeRegistros--;
+			for (int i = posicao; i < quantidadeDeRegistros; i++)
+			{
+				registros[i] = registros[i + 1];
+			}
+
+			cout << "Registro apagado com sucesso!!" << endl << endl;
+			
+			break;
+		
+		case 2:
+
+			break;
+		
+		default:
+			cout << "======================================================================================================================" << endl << endl;
+			cout << "Opção inválida!!" << endl << endl;
+			break;
+		}
+	} while (opcao > 2 or opcao < 1);
+	
+}
+
 void adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &registros) // responsável pela adição de um novo registro
 {
 	quantidadeDeRegistros++;
@@ -303,7 +363,7 @@ void adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &re
 		cin >> registros[posicao].passaporte;
 		cout << endl;
 		
-		if (buscaBinariaID(quantidadeDeRegistros - 1, registros[posicao].passaporte, registros) != -1)
+		if (buscaBinariaPassaporte(quantidadeDeRegistros - 1, registros[posicao].passaporte, registros) != -1)
 		{
 			cout << "ERRO. O passaporte já foi registrado" << endl << endl;
 			analise = false;
@@ -379,7 +439,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 		}
 		else
 		{
-			cout << "Posição não encontrada" << endl << endl;
+			cout << "Registro não encontrada" << endl << endl;
 		}
 		
 
@@ -656,7 +716,7 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &regist
 		case 2: // remover registro
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Em desenvolvimento..." << endl << endl;
-			ordenacaoID(quantidadeDeRegistros, registros);
+			removerRegistro(quantidadeDeRegistros, registros);
 			break;
 
 		case 3: // buscar um registro
