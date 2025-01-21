@@ -7,119 +7,26 @@ using namespace std;
 struct atletas // estrutura que guarda todas as informações de registro dos atletas
 {
 	int identificador, idade, passaporte;
-	char nome[20], pais[15], idioma[10], modalidade[15], preferenciaComida[15]; 
+	char nome[35], pais[25], idioma[20], modalidade[25], preferenciaComida[25]; 
 	char sexo, lixo;
 	
 	void escrita(ifstream &entrada)
 	{
 		entrada >> identificador;
 		entrada >> lixo;
-		entrada.getline(nome, 20, ',');
+		entrada.getline(nome, 35, ',');
 		entrada >> sexo;
 		entrada >> lixo;
 		entrada >> idade;
 		entrada >> lixo;
-		entrada.getline(pais, 15, ',');
+		entrada.getline(pais, 25, ',');
 		entrada >> passaporte;
 		entrada >> lixo;
-		entrada.getline(idioma, 10, ',');
-		entrada.getline(modalidade, 15, ',');
-		entrada.getline(preferenciaComida, 15);
+		entrada.getline(idioma, 20, ',');
+		entrada.getline(modalidade, 25, ',');
+		entrada.getline(preferenciaComida, 25);
 	}
 };
-
-void redimensionamento(atletas* &registros, int &tamanhoVet) // faz o processo de redimensionamento do vetor quando é necessário
-{	
-	tamanhoVet += 5;
-	atletas *vetAux = new atletas [tamanhoVet]; // criação do vetor auxiliar necessário para o redimensionamento
-	copy(registros, registros+(tamanhoVet-5), vetAux);
-	delete [] registros;
-	registros = vetAux;
-}
-
-int leituraTipado(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistros) // função para a leitura dos dados vindos do arquivo tipado
-{
-	string nome; // string para recever o nome do arquivo que será aberto
-
-	cout << "======================================================================================================================" << endl << endl;
-	cout << "Digite o nome do arquivo: ";
-
-	cin >> nome;
-
-	cout << endl;
-
-	ifstream entrada(nome); // abertura do arquivo
-	
-	if (entrada) // verificação se o arquivo foi encontrado
-	{
-		entrada.seekg (0, entrada.end);
-    	quantidadeDeRegistros = entrada.tellg();
-		quantidadeDeRegistros /= 92;
-		entrada.seekg (0, entrada.beg);
-	}
-	else // mensagem de erro e retorno para o menu inicial
-	{
-		cout << "======================================================================================================================" << endl << endl;
-		cout << "Arquivo não encontrado! Voltando para o menu incial..." << endl << endl;
-		return 1;
-	}
-
-	while (tamanhoVet < quantidadeDeRegistros)
-	{
-		redimensionamento(registros, tamanhoVet);
-	}
-	
-	entrada.read((char *) (registros), sizeof(atletas) * quantidadeDeRegistros);
-
-	entrada.close();
-
-	return 0;
-}
-
-int leituraCSV(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistros) // função para a leitura dos dados vindos do arquivo csv
-{
-	string nome; // string para recever o nome do arquivo que será aberto
-
-	cout << "======================================================================================================================" << endl << endl;
-	cout << "Digite o nome do arquivo: ";
-
-	cin >> nome;
-
-	cout << endl;
-
-	string linha; // string auxiliar para guardar os o índice do csv
-	ifstream entrada(nome); // abertura do arquivo
-	
-	if (entrada) // verificação se o arquivo foi encontrado
-	{
-		getline(entrada, linha);
-		entrada >> quantidadeDeRegistros; 
-	}
-	else // mensagem de erro e retorno para o menu inicial
-	{
-		cout << "======================================================================================================================" << endl << endl;
-		cout << "Arquivo não encontrado! Voltando para o menu incial..." << endl << endl;
-		return 1;
-	}
-
-	int i = 0;
-	while (i < quantidadeDeRegistros)
-	{
-		if (i < tamanhoVet)
-		{
-			registros[i].escrita(entrada); // chamada da função de escrita
-			i++;
-		}
-		else
-		{
-			redimensionamento(registros, tamanhoVet); // chamada para a função de redimensionamento quando a quantidade de dados excede o tamanho do vetor
-		}
-	}
-
-	entrada.close();
-
-	return 0;
-}
 
 void ordenacaoID(int quantidadeDeRegistros, atletas* registros) // faz a ordenação baseando-se no identificador
 {
@@ -253,29 +160,186 @@ int buscaBinariaPassaporte(int quantidadeDeRegistros, int procurado, atletas* re
     return posicao;
 }
 
+int validaçãoDoArquivo(int quantidadeDeRegistros, atletas* registros)
+{
+	ordenacaoPassaporte(quantidadeDeRegistros, registros);
+
+	for (int i = 0; i < quantidadeDeRegistros - 1; i++)
+	{
+		if (registros[i].passaporte == registros[i + 1].passaporte)
+		{
+			return 1;
+		}
+	}
+
+	ordenacaoID(quantidadeDeRegistros, registros);
+
+	for (int i = 0; i < quantidadeDeRegistros - 1; i++)
+	{
+		if (registros[i].identificador == registros[i + 1].identificador)
+		{
+			return 2;
+		}
+	}
+
+	return 0;
+	
+}
+
+void redimensionamento(atletas* &registros, int &tamanhoVet) // faz o processo de redimensionamento do vetor quando é necessário
+{	
+	tamanhoVet += 5;
+	atletas *vetAux = new atletas [tamanhoVet]; // criação do vetor auxiliar necessário para o redimensionamento
+	copy(registros, registros+(tamanhoVet-5), vetAux);
+	delete [] registros;
+	registros = vetAux;
+}
+
+int leituraTipado(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistros) // função para a leitura dos dados vindos do arquivo tipado
+{
+	string nome; // string para recever o nome do arquivo que será aberto
+
+	cout << "======================================================================================================================" << endl << endl;
+	cout << "Digite o nome do arquivo: ";
+
+	cin >> nome;
+
+	cout << endl;
+
+	ifstream entrada(nome); // abertura do arquivo
+	
+	if (entrada) // verificação se o arquivo foi encontrado
+	{
+		entrada.seekg (0, entrada.end);
+    	quantidadeDeRegistros = entrada.tellg();
+		cout << quantidadeDeRegistros << ' ';
+		quantidadeDeRegistros /= 144;
+		cout << quantidadeDeRegistros << ' ';
+		entrada.seekg (0, entrada.beg);
+	}
+	else // mensagem de erro e retorno para o menu inicial
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Arquivo não encontrado! Voltando para o menu incial..." << endl << endl;
+		return 1;
+	}
+
+	while (tamanhoVet < quantidadeDeRegistros)
+	{
+		redimensionamento(registros, tamanhoVet);
+	}
+	
+	entrada.read((char *) (registros), sizeof(atletas) * quantidadeDeRegistros);
+
+	entrada.close();
+
+	if (validaçãoDoArquivo(quantidadeDeRegistros, registros) == 1)
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Arquivo com passaportes repetidos! Voltando para o menu incial..." << endl << endl;
+		return 1; 
+	}
+
+	else if (validaçãoDoArquivo(quantidadeDeRegistros, registros) == 2)
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Arquivo com identificadores repetidos! Voltando para o menu incial..." << endl << endl;
+		return 1; 
+	}
+	
+	cout << "======================================================================================================================" << endl << endl;
+	cout << "Arquivo aberto com sucesso!!" << endl << endl;
+
+	return 0;
+}
+
+int leituraCSV(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistros) // função para a leitura dos dados vindos do arquivo csv
+{
+	string nome; // string para recever o nome do arquivo que será aberto
+
+	cout << "======================================================================================================================" << endl << endl;
+	cout << "Digite o nome do arquivo: ";
+
+	cin >> nome;
+
+	cout << endl;
+
+	string linha; // string auxiliar para guardar os o índice do csv
+	ifstream entrada(nome); // abertura do arquivo
+	
+	if (entrada) // verificação se o arquivo foi encontrado
+	{
+		getline(entrada, linha);
+		entrada >> quantidadeDeRegistros; 
+	}
+	else // mensagem de erro e retorno para o menu inicial
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Arquivo não encontrado! Voltando para o menu incial..." << endl << endl;
+		return 1;
+	}
+
+	int i = 0;
+	while (i < quantidadeDeRegistros)
+	{
+		if (i < tamanhoVet)
+		{
+			registros[i].escrita(entrada); // chamada da função de escrita
+			i++;
+		}
+		else
+		{
+			redimensionamento(registros, tamanhoVet); // chamada para a função de redimensionamento quando a quantidade de dados excede o tamanho do vetor
+		}
+	}
+
+	entrada.close();
+
+	if (validaçãoDoArquivo(quantidadeDeRegistros, registros) == 1)
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Arquivo com passaportes inválidos! Voltando para o menu incial..." << endl << endl;
+		return 1; 
+	}
+
+	else if (validaçãoDoArquivo(quantidadeDeRegistros, registros) == 2)
+	{
+		cout << "======================================================================================================================" << endl << endl;
+		cout << "Arquivo com identificadores inválidos! Voltando para o menu incial..." << endl << endl;
+		return 1; 
+	}
+	
+	cout << "======================================================================================================================" << endl << endl;
+	cout << "Arquivo aberto com sucesso!!" << endl << endl;
+
+	return 0;
+}
+
 void removerRegistro(int &quantidadeDeRegistros, atletas* registros)
 {
 	int posicao;
 	int opcao;
+	int procurado;
 
 	do
 	{
+
 		cout << "======================================================================================================================" << endl << endl;
-		cout << "Qual a posição do registro que deseja remover? " << endl << endl;
-
-		cin >> posicao;
-
+		cout << "Digite o identificador do registro que gostaria de remover: ";
+		
+		cin >> procurado;
+		
 		cout << endl;
 
-		if (posicao < 1 or posicao > quantidadeDeRegistros)
+		posicao = buscaBinariaID(quantidadeDeRegistros, procurado, registros);
+
+		if (posicao == -1)
 		{
 			cout << "======================================================================================================================" << endl << endl;
-			cout << "Posição inexistente!!" << endl << endl;
+			cout << "Registro inexistente!!" << endl << endl;
 		}
 		
-	} while (posicao < 1 or posicao > quantidadeDeRegistros);
-	
-	posicao--;
+	} while (posicao == -1);
 
 	do
 	{
@@ -289,7 +353,7 @@ void removerRegistro(int &quantidadeDeRegistros, atletas* registros)
 
 		switch (opcao)
 		{
-		case 1:
+		case 1: // realiza a remoção do registro
 			quantidadeDeRegistros--;
 			for (int i = posicao; i < quantidadeDeRegistros; i++)
 			{
@@ -300,8 +364,8 @@ void removerRegistro(int &quantidadeDeRegistros, atletas* registros)
 			
 			break;
 		
-		case 2:
-
+		case 2: // cancela a remoção
+			// caso 2 não pode cair do default
 			break;
 		
 		default:
@@ -324,25 +388,21 @@ void adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &re
 		redimensionamento (registros, tamanhoVet);
 	}
 
-	do
-	{
-		cout << "Digite o identificador: ";
-		cin >> registros[posicao].identificador;
-		cout << endl;
+	cout << "Digite o identificador: ";
+	cin >> registros[posicao].identificador;
+	cout << endl;
 		
-		if (buscaBinariaID(quantidadeDeRegistros - 1, registros[posicao].identificador, registros) != -1)
-		{
-			cout << "ERRO. O identificador já foi registrado" << endl << endl;
-			analise = false;
-		}
-		else
-		{
-			analise = true;
-		}
-	} while (not analise);
+	if (buscaBinariaID(quantidadeDeRegistros - 1, registros[posicao].identificador, registros) != -1)
+	{
+		cout << "ERRO. O identificador já foi registrado. Voltando para o menu principal..." << endl << endl;
+		quantidadeDeRegistros--;
+		return;
+	}
+
+	cin.ignore();
 
 	cout << "Digite o nome: ";
-	cin >> registros[posicao].nome;
+	cin.getline(registros[posicao].nome, 35);
 	cout << endl;
 
 	cout << "Digite o sexo: ";
@@ -353,40 +413,40 @@ void adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &re
 	cin >> registros[posicao].idade;
 	cout << endl;
 
+	cin.ignore();
+
 	cout << "Digite o país: ";
-	cin >> registros[posicao].pais;
+	cin.getline(registros[posicao].pais, 25);
 	cout << endl;
 
-	do
+	cout << "Digite o passaporte: ";
+	cin >> registros[posicao].passaporte;
+	cout << endl;
+	
+	if (buscaBinariaPassaporte(quantidadeDeRegistros - 1, registros[posicao].passaporte, registros) != -1)
 	{
-		cout << "Digite o passaporte: ";
-		cin >> registros[posicao].passaporte;
-		cout << endl;
-		
-		if (buscaBinariaPassaporte(quantidadeDeRegistros - 1, registros[posicao].passaporte, registros) != -1)
-		{
-			cout << "ERRO. O passaporte já foi registrado" << endl << endl;
-			analise = false;
-		}
-		else
-		{
-			analise = true;
-		}
-	} while (not analise);
+		cout << "ERRO. O passaporte já foi registrado. Voltando para o menu principal..." << endl << endl;
+		quantidadeDeRegistros--;
+		return;
+	}
+
+	cin.ignore();
 
 	cout << "Digite o primeiro idioma: ";
-	cin >> registros[posicao].idioma;
+	cin.getline(registros[posicao].idioma, 20);
 	cout << endl;
 	
 	cout << "Digite a modalidade: ";
-	cin >> registros[posicao].modalidade;
+	cin.getline(registros[posicao].modalidade, 25);
 	cout << endl;
 
 	cout << "Digite a preferência de comida: ";
-	cin >> registros[posicao].preferenciaComida;
+	cin.getline(registros[posicao].preferenciaComida, 25);
 	cout << endl;
 
 	cout << "Novo registro cadastrado!!" << endl << endl;
+
+	return;
 }
 
 void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibilita a busca de um determinado registro pelo usuário e permite sua modificação
@@ -696,6 +756,8 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &regist
 
 	do
 	{
+		ordenacaoID(quantidadeDeRegistros, registros);
+
 		cout << "======================================================================================================================" << endl << endl;
 		cout << "O que deseja fazer?" << endl << endl;
 		cout << "1. Fazer mais um registro" << endl << "2. Remover um registro" << endl << "3. Buscar por um registro" << endl << "4. Escrever todos os registro na tela" << endl << "5. Gravar registros em um arquivo" << endl << "0. Encerrar o programa" << endl << endl;
