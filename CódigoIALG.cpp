@@ -6,7 +6,8 @@ using namespace std;
 
 struct atletas // estrutura que guarda todas as informações de registro dos atletas
 {
-	int identificador, idade, passaporte;
+	int identificador, idade;
+	int passaporte;
 	char nome[35], pais[25], idioma[20], modalidade[25], preferenciaComida[25]; 
 	char sexo;
 };
@@ -151,6 +152,8 @@ int validacaoDoArquivo(int quantidadeDeRegistros, atletas* registros) // verific
 	{
 		if (registros[i].passaporte == registros[i + 1].passaporte)
 		{
+			cout << registros[i].identificador << ' ' << registros[i].nome << ' ' << registros[i].sexo << ' ' << registros[i].idade << ' ' << registros[i].pais << ' ' << registros[i].passaporte << ' ' << registros[i].idioma << ' ' << registros[i].modalidade << ' ' << registros[i].preferenciaComida << endl;
+
 			return 1;
 		}
 	}
@@ -679,7 +682,7 @@ void escritaTela(int quantidadeDeRegistros, atletas* registros) // responsável 
 		case 1: // mostrar todo o registro
 			for(int i = 0; i < quantidadeDeRegistros; i++)
 			{
-				cout << registros[i].identificador << ' ' << registros[i].nome << ' ' << registros[i].sexo << ' ' << registros[i].idade << ' ' << registros[i].pais << ' ' << registros[i].passaporte << ' ' << registros[i].idioma << ' ' << registros[i].modalidade << ' ' << registros[i].preferenciaComida << endl;
+				cout << registros[i].identificador << " | " << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
 			}
 
 			cout << endl;
@@ -701,7 +704,7 @@ void escritaTela(int quantidadeDeRegistros, atletas* registros) // responsável 
 
 			for(int i = inicio - 1; i < fim; i++)
 			{
-				cout << registros[i].identificador << ' ' << registros[i].nome << ' ' << registros[i].sexo << ' ' << registros[i].idade << ' ' << registros[i].pais << ' ' << registros[i].passaporte << ' ' << registros[i].idioma << ' ' << registros[i].modalidade << ' ' << registros[i].preferenciaComida << endl;
+				cout << registros[i].identificador << " | " << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
 			}
 
 			cout << endl;

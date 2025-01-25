@@ -1,51 +1,102 @@
-#identificador(int),nome(string com espaço),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço)
-49
-1,pedro,M,58,espanha,48,catalao,polo,bananaa
-2,livia,F,19,brasil,47,catalao,polo,ovo
-3,erick,M,78,franca,46,portugues,futebol,banana
-4,pedro,M,58,espanha,45,catalao,polo,banana
-5,livia,F,19,brasil,44,catalao,polo,ovo
-6,erick,M,78,franca,43,portugues,futebol,banana
-7,pedro,M,58,espanha,42,catalao,polo,banana
-8,livia,F,19,brasil,41,catalao,polo,ovo
-9,erick,M,78,franca,40,portugues,futebol,banana
-10,pedro,M,58,espanha,39,catalao,polo,banana
-11,livia,F,19,brasil,38,catalao,polo,ovo
-12,erick,M,78,franca,37,portugues,futebol,banana
-13,pedro,M,58,espanha,36,catalao,polo,banana
-14,livia,F,19,brasil,35,catalao,polo,ovo
-15,erick,M,78,franca,34,portugues,futebol,banana
-16,pedro,M,58,espanha,33,catalao,polo,banana
-17,livia,F,19,brasil,32,catalao,polo,ovo
-18,erick,M,78,franca,31,portugues,futebol,banana
-19,pedro,M,58,espanha,30,catalao,polo,banana
-20,livia,F,19,brasil,29,catalao,polo,ovo
-21,erick,M,78,franca,28,portugues,futebol,banana
-22,pedro,M,58,espanha,27,catalao,polo,banana
-23,livia,F,19,brasil,26,catalao,polo,ovo
-24,erick,M,78,franca,25,portugues,futebol,banana
-25,pedro,M,58,espanha,24,catalao,polo,banana
-26,livia,F,19,brasil,23,catalao,polo,ovo
-27,erick,M,78,franca,22,portugues,futebol,banana
-28,pedro,M,58,espanha,21,catalao,polo,banana
-29,livia,F,19,brasil,20,catalao,polo,ovo
-30,erick,M,78,franca,19,portugues,futebol,banana
-31,pedro,M,58,espanha,18,catalao,polo,banana
-32,livia,F,19,brasil,17,catalao,polo,ovo
-33,erick,M,78,franca,16,portugues,futebol,banana
-34,pedro,M,58,espanha,15,catalao,polo,banana
-35,livia,F,19,brasil,14,catalao,polo,ovo
-36,erick,M,78,franca,13,portugues,futebol,banana
-37,pedro,M,58,espanha,12,catalao,polo,banana
-38,livia,F,19,brasil,11,catalao,polo,ovo
-39,erick,M,78,franca,10,portugues,futebol,banana
-40,pedro,M,58,espanha,9,catalao,polo,banana
-41,oooolivia,F,19,brasil,8,catalao,polo,ovo
-42,erick,M,78,franca,7,portugues,futebol,banana
-43,pedro,M,58,espanha,6,catalao,polo,banana
-44,livia,F,19,brasil,5,catalao,polo,ovo
-45,erick,M,78,franca,4,portugues,futebol,banana
-46,pedro,M,58,espanha,3,catalao,polo,banana
-47,livia,F,19,brasil,2,catalao,polo,ovo
-48,erick,M,78,franca,1,portugues,futebol,banana
-49,Mauricio,M,19,brasil,123,portugues,futebol,pizza
+﻿#identificador(int),nome(string com espaço),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço)
+100
+1,Caeleb Dressel,M,27,EUA,384729184,Inglês,natação,Hambúrguer
+2,Simone Biles,F,27,EUA,928374645,Inglês,ginástica artística,Sanduíche
+3,Novak Djokovic,M,37,Sérvia,203948576,Sérvio,tênis,Ćevapi
+4,Armand Duplantis,M,24,Suécia,560283910,Sueco,salto com vara,Köttbullar
+5,Eliane Thompson-Herah,F,32,Jamaica,736290451,Inglês,atletismo,Jerk Chicken
+6,Katie Ledecky,F,25,EUA,248693570,Inglês,natação,Mac 'n Cheese
+7,Karsten Warholm,M,28,Noruega,572983614,Norueguês,atletismo,Klippfisk
+8,Dina Asher-Smith,F,28,Reino Unido,897120643,Inglês,atletismo,Fish and Chips
+9,Andre De Grasse,M,29,Canadá,109283746,Francês,atletismo,Poutine
+10,Athing Mu,F,23,EUA,501728934,Inglês,atletismo,Ovos com bacon
+11,Sifan Hassan,F,30,Países Baixos,607294831,Holandês,atletismo,Stroopwafel
+12,Linoy Ashram,F,24,Israel,184930257,Hebraico,ginástica rítmica,Hummus
+13,Tom Daley,M,29,Reino Unido,849302658,Inglês,saltos ornamentais,Sunday Roast
+14,Caleb Dressel,M,27,EUA,453829107,Inglês,natação,Salada
+15,Yulimar Rojas,F,29,Venezuela,910483726,Espanhol,atletismo,Arepas
+16,Neeraj Chopra,M,25,Índia,314826059,Hindi,atletismo,Masala Dosa
+17,Tatjana Schoenmaker,F,27,África do Sul,946275031,Áfrikaans,natação,Bobotie
+18,Joshua Cheptegei,M,27,Uganda,589463710,Luganda,atletismo,Matoke
+19,Mondo Duplantis,M,24,Suécia,238405690,Sueco,salto com vara,Köttbullar
+20,Valentina Veretennikova,F,30,Rússia,982645317,Russo,remo,Borscht
+21,Viktor Axelsen,M,29,Dinamarca,642189053,Dinamarquês,badminton,Smørrebrød
+22,Naomi Osaka,F,26,Japão,729845601,Japonês,tênis,Sushi
+23,Lee Kiefer,F,30,EUA,281346579,Inglês,esgrima,Peixe assado
+24,Matty Lee,M,27,Reino Unido,601472839,Inglês,saltos ornamentais,Sunday Roast
+25,Lasha Talakhadze,M,31,Geórgia,471859203,Georgiano,halterofilismo,Khachapuri
+26,Caleb Williams,M,25,EUA,586937102,Inglês,futebol,Waffles
+27,Christian Taylor,M,34,EUA,708395461,Inglês,atletismo,Hambúrguer
+28,Michael Norman,M,27,EUA,402876913,Inglês,atletismo,Cobb salad
+29,Larisa Iordache,F,24,Romênia,263804571,Romeno,ginástica artística,Sarmale
+30,Emma McKeon,F,29,Austrália,592380147,Inglês,natação,Meat Pie
+31,Marcell Jacobs,M,29,Itália,109473625,Italiano,atletismo,Pizza
+32,Aliya Mustafina,F,29,Rússia,908243761,Russo,ginástica artística,Borscht
+33,Guido Migliozzi,M,26,Itália,614298375,Italiano,golfe,Pizza
+34,Tamyra Mensah-Stock,F,28,EUA,357628104,Inglês,luta livre,Waldorf salad
+35,Joshua Kutryk,M,30,Canadá,814597263,Inglês e Francês,remo,Poutine
+36,Shoma Uno,M,26,Japão,572894310,Japonês,patinação artística,Sushi
+37,Li Xuerui,F,32,China,483210697,Chinês,badminton,Dim Sum
+38,Simone Manuel,F,27,EUA,736948210,Inglês,natação,Bolo de carne
+39,Sarah Sjöström,F,30,Suécia,921587643,Sueco,natação,Köttbullar
+40,Richard Carapaz,M,30,Equador,684290537,Espanhol,ciclismo,Ceviche
+41,Hend Zaza,F,15,Síria,314659278,Árabe,tênis de mesa,Fattoush
+42,Elina Svitolina,F,29,Ucrânia,987654310,Ucraniano,tênis,Borscht
+43,Steven Lopez,M,29,EUA,204876531,Inglês,esgrima,Bife grelhado
+44,Michael Phelps,M,39,EUA,637204851,Inglês,natação,Tacos
+45,Matt Fraser,M,34,EUA,738415026,Inglês,levantamento de peso,Cheesecake
+46,Caster Semenya,F,32,África do Sul,504281736,Áfrikaans,atletismo,Bobotie
+47,Kristof Milak,M,23,Hungria,648927530,Húngaro,natação,Gulyás
+48,Gabriel Medina,M,31,Brasil,902318476,Português,surfe,Feijoada
+49,Ryohei Kato,M,29,Japão,231947850,Japonês,judô,Sushi
+50,James Guy,M,28,Reino Unido,549836102,Inglês,natação,Sunday Roast
+51,Brigid Kosgei,F,30,Quênia,864307591,Kiswahili,atletismo,Ugali
+52,Matthew Centrowitz,M,33,EUA,384510629,Inglês,atletismo,Peixe assado
+53,Lasha Talakhadze,M,31,Geórgia,927564810,Georgiano,levantamento de peso,Khachapuri
+54,Liana Gutsul,F,25,Ucrânia,582374910,Ucraniano,atletismo,Varenyky
+55,Dawn Harper-Nelson,F,40,EUA,193746582,Inglês,atletismo,Costela de porco
+56,Katie Taylor,F,37,Irlanda,460572391,Inglês,boxe,Irish Stew
+57,Abby Wambach,F,43,EUA,730614982,Inglês,futebol,Panquecas
+58,Lin Dan,M,41,China,823964501,Chinês,badminton,Dim Sum
+59,Jasmine Camacho-Quinn,F,27,Porto Rico,490728635,Espanhol,atletismo,Arroz com Gandules
+60,Anna Shcherbakova,F,20,Rússia,305987462,Russo,patinação artística,Borscht
+61,Angel Mena,M,31,Equador,571820349,Espanhol,futebol,Ceviche
+62,Isabell Werth,F,55,Alemanha,204976513,Alemão,hipismo,Sauerbraten
+63,Marcel Hirscher,M,34,Áustria,487502619,Alemão,esqui alpino,Apfelstrudel
+64,Michaela Shiffrin,F,28,EUA,364870195,Inglês,esqui alpino,Hambúrguer
+65,Jennifer Valente,F,28,EUA,529647810,Inglês,ciclismo,Pizza
+66,Sydney McLaughlin,F,24,EUA,217508639,Inglês,atletismo,Brownie
+67,Jakub Vadlejch,M,32,República Tcheca,365420897,Checo,atletismo,Svíčková
+68,Akeem Bloomfield,M,28,Jamaica,908473512,Inglês,atletismo,Jerk Chicken
+69,Ma Long,M,35,China,239475681,Chinês,tênis de mesa,Dim Sum
+70,Saori Yoshida,F,38,Japão,760123489,Japonês,luta livre,Sushi
+71,Marit Bjørgen,F,44,Noruega,105746829,Norueguês,esqui cross-country,Pinnekjøtt
+72,Tomasz Majewski,M,42,Polônia,487503269,Polonês,atletismo,Bigos
+73,Millie Knight,F,25,Reino Unido,831290647,Inglês,esqui alpino,Full English Breakfast
+74,Lindsey Vonn,F,39,EUA,905736481,Inglês,esqui alpino,Biscuits and gravy
+75,Clarissa Shields,F,29,EUA,763019484,Inglês,boxe,Almôndegas
+76,Tomomi Okamura,F,30,Japão,381265749,Japonês,judô,Sushi
+77,David Weir,M,45,Reino Unido,539218476,Inglês,atletismo,Sunday Roast
+78,Jennifer Brady,F,29,EUA,649287531,Inglês,tênis,Purê de batata
+79,Kyle Chalmers,M,26,Austrália,308742516,Inglês,natação,Meat Pie
+80,Kristina Mladenovic,F,30,França,471206395,Francês,tênis,Baguette
+81,Jorge González,M,30,Cuba,847592630,Espanhol,basquete,Arroz con Pollo
+82,Layshia Clarendon,F,33,EUA,618342795,Inglês,basquete,Mix de legumes
+83,Kevin Durant,M,35,EUA,763289541,Inglês,basquete,Mashed potatoes
+84,Sifan Hassan,F,30,Países Baixos,930472681,Holandês,atletismo,Stroopwafel
+85,Gabriel Santos,M,28,Brasil,749206183,Português,basquete,Churrasco
+86,Tessa Virtue,F,35,Canadá,203874561,Inglês,patinação artística,Poutine
+87,Tim Walther,M,28,Alemanha,651372908,Alemão,remo,Wiener Schnitzel
+88,Chloe Kim,F,24,EUA,395671482,Inglês,snowboard,Hambúrguer
+89,Ronda Rousey,F,36,EUA,738210596,Inglês,judô,Apple pie
+90,Mackenzie Brown,F,28,EUA,846320759,Inglês,tiro com arco,Caesar salad
+91,Jakob Ingebrigtsen,M,23,Noruega,736214850,Norueguês,atletismo,Klippfisk
+92,Eileen Gu,F,21,China,429681035,Chinês,esqui freestyle,Dim Sum
+93,Keely Hodgkinson,F,23,Reino Unido,138692745,Inglês,atletismo,Fish and Chips
+94,Zhou Qi,M,29,China,294581763,Chinês,basquete,Dim Sum
+95,Simone Biles,F,27,EUA,582019374,Inglês,ginástica artística,Chips de banana
+96,Muhammad Ali,M,44,EUA,192837465,Inglês,boxe,Hambúrguer
+97,Eric Liddell,M,35,Reino Unido,476193582,Inglês,atletismo,Sunday Roast
+98,Kevin Mayer,M,33,França,928451736,Francês,atletismo,Baguette
+99,Tamyra Mensah-Stock,F,28,EUA,675409381,Inglês,luta livre,Waffles
+100,Patrick Mahomes,M,28,EUA,184627395,Inglês,futebol americano,Kafta
