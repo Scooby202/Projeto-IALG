@@ -403,9 +403,19 @@ void adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &re
 	cin.getline(registros[posicao].nome, 35);
 	cout << endl;
 
-	cout << "Digite o sexo: ";
-	cin >> registros[posicao].sexo;
-	cout << endl;
+	do
+	{
+		cout << "Digite o sexo (M para masculino e F para feminino): ";
+		cin >> registros[posicao].sexo;
+		cout << endl;
+
+		if (registros[posicao].sexo != 'M' and registros[posicao].sexo != 'F') // verifica se o sexo é válido
+		{
+			cout << "======================================================================================================================" << endl << endl;
+			cout << "Sexo inválido!!" << endl << endl;
+		}
+	} while (registros[posicao].sexo != 'M' and registros[posicao].sexo != 'F');
+	
 	
 	cout << "Digite a idade: ";
 	cin >> registros[posicao].idade;
@@ -454,10 +464,11 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 	int opcao;
 	int posicao = -1;
 	int procurado;
-	bool fecha = false; // variável auxiliar para que seja possível voltar ao menu sem imprimir uma mensagem de erro
-
+	bool procurou; // variavel auxiliar para verificar se o registro foi encontrado
 	do
-	{
+	{	
+		procurou = false;
+
 		cout << "======================================================================================================================" << endl << endl;
 		cout << "Gostaria de fazer a busca pelo identificador ou pelo passaporte ?" << endl << endl;
 		cout << "1. Identificador" << endl << "2. Passaporte" << endl << "0. Voltar para o menu principal" << endl << endl;
@@ -476,6 +487,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 			cout << endl;
 			posicao = buscaBinariaID(quantidadeDeRegistros, procurado, registros);
 			selecionado = opcao;
+			procurou = true;
 			break;
 		
 		case 2: // realiza a busca pelo passaporte
@@ -485,10 +497,11 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 			cout << endl;
 			posicao = buscaBinariaPassaporte(quantidadeDeRegistros, procurado, registros);
 			selecionado = opcao;
+			procurou = true;
 			break;
 
 		case 0: // volta para o menu inicial
-			fecha = true;
+			
 			break;
 
 		default:
@@ -497,11 +510,11 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 			break;
 		}
 
-		if (posicao == -1 and not fecha) // condicional para verificar se a busca foi realizada e se o registro foi encontrado
+		if (posicao == -1 and procurou) // condicional para verificar se a busca foi realizada e se o registro foi encontrado
 		{
 			cout << "Registro não encontrado" << endl << endl;
 		}
-		else // caso o registro seja encontrado
+		else if (posicao >= 0 and procurou)// caso o registro seja encontrado
 		{
 			opcao = 0; // mudança para encerrar a repetição
 		}
@@ -511,13 +524,14 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 	
 	if (posicao != -1) // condicional para verificar se a busca foi realizada e abrir o menu de modificação
 	{
-		int numeroAux;
+		int numeroAux; // variável auxiliar para armazenar os novos valores e verificar se são válidos
 
-		cout << "======================================================================================================================" << endl << endl;
-		cout << registros[posicao].identificador << ' ' << registros[posicao].nome << ' ' << registros[posicao].sexo << ' ' << registros[posicao].idade << ' ' << registros[posicao].pais << ' ' << registros[posicao].passaporte << ' ' << registros[posicao].idioma << ' ' << registros[posicao].modalidade << ' ' << registros[posicao].preferenciaComida << endl << endl;
 
 		do
 		{
+			cout << "======================================================================================================================" << endl << endl;
+			cout << registros[posicao].identificador << ' ' << registros[posicao].nome << ' ' << registros[posicao].sexo << ' ' << registros[posicao].idade << ' ' << registros[posicao].pais << ' ' << registros[posicao].passaporte << ' ' << registros[posicao].idioma << ' ' << registros[posicao].modalidade << ' ' << registros[posicao].preferenciaComida << endl << endl;
+
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Deseja modificar algum dado do registro ?" << endl << endl << "1. Identificador" << endl << "2. Nome" << endl << "3. Sexo" << endl << "4. Idade" << endl << "5. País" << endl << "6. Passaporte" << endl << "7. Idioma" << endl << "8. Modalidade" << endl << "9. Preferencia de comida" << endl << "0. Não" << endl << endl;
 			cout << "Selecione uma opção: ";
@@ -566,12 +580,20 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				break;
 
 			case 3: // modificar o sexo
-				cout << "======================================================================================================================" << endl << endl;
-				cout << "Digite o novo sexo: ";
-				
-				cin >> registros[posicao].sexo;
-				
-				cout << endl << "Sexo modificado!!" << endl << endl;
+				do
+				{
+					cout << "Digite o sexo (M para masculino e F para feminino): ";
+					cin >> registros[posicao].sexo;
+					cout << endl;
+
+					if (registros[posicao].sexo != 'M' and registros[posicao].sexo != 'F') // verifica se o sexo é válido
+					{
+						cout << "======================================================================================================================" << endl << endl;
+						cout << "Sexo inválido!!" << endl << endl;
+					}
+				} while (registros[posicao].sexo != 'M' and registros[posicao].sexo != 'F');
+
+				cout << "Sexo modificado!!" << endl << endl;
 				break;
 
 			case 4: // modificar a idade
