@@ -154,7 +154,7 @@ int validacaoDoArquivo(int quantidadeDeRegistros, atletas* registros) // verific
 	{
 		if (registros[i].passaporte == registros[i + 1].passaporte)
 		{
-			cout << registros[i].identificador << ' ' << registros[i].nome << ' ' << registros[i].sexo << ' ' << registros[i].idade << ' ' << registros[i].pais << ' ' << registros[i].passaporte << ' ' << registros[i].idioma << ' ' << registros[i].modalidade << ' ' << registros[i].preferenciaComida << endl;
+			cout << registros[i].identificador << " | " << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl;
 
 			return 1;
 		}
@@ -530,7 +530,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 		do
 		{
 			cout << "======================================================================================================================" << endl << endl;
-			cout << registros[posicao].identificador << ' ' << registros[posicao].nome << ' ' << registros[posicao].sexo << ' ' << registros[posicao].idade << ' ' << registros[posicao].pais << ' ' << registros[posicao].passaporte << ' ' << registros[posicao].idioma << ' ' << registros[posicao].modalidade << ' ' << registros[posicao].preferenciaComida << endl << endl;
+			cout << registros[posicao].identificador << " | " << registros[posicao].nome << " | " << registros[posicao].sexo << " | " << registros[posicao].idade << " | " << registros[posicao].pais << " | " << registros[posicao].passaporte << " | " << registros[posicao].idioma << " | " << registros[posicao].modalidade << " | " << registros[posicao].preferenciaComida << endl << endl;
 
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Deseja modificar algum dado do registro ?" << endl << endl << "1. Identificador" << endl << "2. Nome" << endl << "3. Sexo" << endl << "4. Idade" << endl << "5. País" << endl << "6. Passaporte" << endl << "7. Idioma" << endl << "8. Modalidade" << endl << "9. Preferencia de comida" << endl << "0. Não" << endl << endl;
