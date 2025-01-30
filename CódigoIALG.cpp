@@ -1164,7 +1164,7 @@ void gravarDados(int quantidadeDeRegistros, int tipoArqAberto, atletas* registro
 	} while (opcao != 0);
 }
 
-void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, atletas* &registros, string nomeDoArqAberto) // menu com as principais funções do programa
+void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, atletas* &registros, string nomeDoArqAberto) // menu com as principais funções do programar
 {
 	int opcao;
 	int teste;
@@ -1188,7 +1188,7 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, a
 		}
 		else
 		{
-			opcao = -1;
+			opcao = -1; // mudança no opcao para ele cair no default e repetir  
 		}
 
 
@@ -1267,7 +1267,7 @@ int main() // inicia as variáveis, chama a abertura do arquivo e do menu princi
 		}
 		else
 		{
-			opcao = -1;
+			opcao = -1; // mudança no opcao para ele cair no default e repetir  
 		}
 
 		switch (opcao)
@@ -1277,7 +1277,7 @@ int main() // inicia as variáveis, chama a abertura do arquivo e do menu princi
 			{
 				tipoDeArqAberto = 1;
 				menuPrincipal(quantidadeDeRegistros, tamanhoVet, tipoDeArqAberto, registros, nomeArqAberto);
-				opcao = 0;
+				opcao = 0; // mudança no opcao para ele fechar o programa depois de que o menu principal acaba
 			}
 			break;
 		
@@ -1286,7 +1286,7 @@ int main() // inicia as variáveis, chama a abertura do arquivo e do menu princi
 			{
 				tipoDeArqAberto = 2;
 				menuPrincipal(quantidadeDeRegistros, tamanhoVet, tipoDeArqAberto, registros, nomeArqAberto);
-				opcao = 0;
+				opcao = 0; // mudança no opcao para ele fechar o programa depois de que o menu principal acaba
 			}
 			break;
 
