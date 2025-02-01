@@ -345,7 +345,7 @@ void removerRegistro(int &quantidadeDeRegistros, atletas* registros) // realiza 
 				procurado = stoi(aux);
 			}
 			
-		} while (not not aux.empty() and validacaoInt(aux)); // repetição para que o usuário digite um identificador válido
+		} while (aux.empty() or not validacaoInt(aux)); // repetição para que o usuário digite um identificador válido
 		
 
 		posicao = buscaBinariaID(quantidadeDeRegistros, procurado, registros);
@@ -417,7 +417,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 	// identificador
 	do
 	{
-		cout << "Digite o identificador: ";
+		cout << "Digite o identificador (número inteiro): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -441,7 +441,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 	// nome
 	do
 	{
-		cout << "Digite o nome: ";
+		cout << "Digite o nome (até 35 caracteres): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -479,7 +479,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 	// idade
 	do
-	{	cout << "Digite a idade: ";
+	{	cout << "Digite a idade (número inteiro): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -497,7 +497,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 	// país
 	do
 	{
-		cout << "Digite o país: ";
+		cout << "Digite o país (até 25 caracteres): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -513,12 +513,12 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "País inválido!!" << endl << endl;
 		}
-	}while (not validacaoChar(aux, 2)); // repetição para que o usuário digite um país válido
+	} while (not validacaoChar(aux, 2)); // repetição para que o usuário digite um país válido
 
 	// passaporte
 	do
 	{
-		cout << "Digite o passaporte: ";
+		cout << "Digite o número de passaporte (sequência de dígitos): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -529,7 +529,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		else 
 		{
 			cout << "======================================================================================================================" << endl << endl;
-			cout << "Passaporte inválido!!" << endl << endl;
+			cout << "Número de passaporte inválido!!" << endl << endl;
 		}
 	} while (aux.empty() or not validacaoInt(aux)); // repetição para que o usuário digite um passaporte válido
 	
@@ -542,7 +542,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 	// idioma
 	do
 	{
-		cout << "Digite o idioma: ";
+		cout << "Digite o idioma (até 20 caracteres): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -563,11 +563,11 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 	// modalidade
 	do
 	{
-		cout << "Digite a modalidade: ";
+		cout << "Digite a modalidade (até 25 caracteres): ";
 		getline(cin, aux);
 		cout << endl;
 
-		if(validacaoChar(aux, 2)) // verifica se a modalidade é válida
+		if (validacaoChar(aux, 2)) // verifica se a modalidade é válida
 		{
 			for (int i = 0; i < 25; i++)
 			{
@@ -584,7 +584,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 	// preferência de comida
 	do
 	{
-		cout << "Digite a preferência de comida: ";
+		cout << "Digite a preferência de comida (até 25 caracteres): ";
 		getline(cin, aux);
 		cout << endl;
 
@@ -609,10 +609,10 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibilita a busca de um determinado registro pelo usuário e permite sua modificação
 {
-	int selecionado; // variável auxiliar para armazenar qual deve ser o tipo de ordenação a ser usado durante toda a busca
 	int opcao;
-	int posicao = -1;
-	int procurado;
+	int selecionado; // variável auxiliar para armazenar qual deve ser o tipo de ordenação a ser usado durante toda a busca
+	int posicao = -1; // variável para armazenar a posição do registro iniciada com -1 pois ainda não houve a busca
+	int procurado; // variável para armazenar o valor que o usuário deseja procurar
 	bool procurou; // variavel auxiliar para verificar se o registro foi encontrado
 	string aux; // string auxiliar para armazenar o tipo de busca
 
@@ -622,7 +622,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 		cout << "======================================================================================================================" << endl << endl;
 		cout << "Gostaria de fazer a busca pelo identificador ou pelo passaporte ?" << endl << endl;
-		cout << "1. Identificador" << endl << "2. Passaporte" << endl << "0. Voltar para o menu principal" << endl << endl;
+		cout << "1. Identificador" << endl << "2. Número de passaporte" << endl << "0. Voltar para o menu principal" << endl << endl;
 		cout << "Selecione uma opção: ";
 		
 		getline(cin, aux);
@@ -663,7 +663,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 		
 		case 2: // realiza a busca pelo passaporte
 			cout << "======================================================================================================================" << endl << endl;
-			cout << "Digite o passaporte que gostaria de procurar: ";
+			cout << "Digite o número de passaporte que gostaria de procurar: ";
 			getline(cin, aux);
 			cout << endl;
 
@@ -677,7 +677,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 			else
 			{
 				cout << "======================================================================================================================" << endl << endl;
-				cout << "Passaporte inválido!!" << endl << endl;
+				cout << "Número de passaporte inválido!!" << endl << endl;
 			}
 			break;
 
@@ -709,6 +709,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 		do
 		{
 			cout << "======================================================================================================================" << endl << endl;
+			cout << "Identificador" << " | " << "Nome" << " | " << "Sexo" << " | " << "Idade" << " | " << "País" << " | " << "Número do Passaporte" << " | " << "Primeiro Idioma Falado" << " | " << "Modalidade" << " | " << "Preferência de Comida" << endl << endl; // cabeçalho
+
 			cout << registros[posicao].identificador << " | " << registros[posicao].nome << " | " << registros[posicao].sexo << " | " << registros[posicao].idade << " | " << registros[posicao].pais << " | " << registros[posicao].passaporte << " | " << registros[posicao].idioma << " | " << registros[posicao].modalidade << " | " << registros[posicao].preferenciaComida << endl << endl;
 
 			cout << "======================================================================================================================" << endl << endl;
@@ -770,7 +772,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				break;
 			
 			case 2: // modificar o nome
-				cout << "Digite o novo nome: ";
+				cout << "Digite o novo nome (até 35 caracteres): ";
 				getline(cin, aux);
 				cout << endl;
 
@@ -792,27 +794,30 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 			case 3: // modificar o sexo
 
-				cout << "======================================================================================================================" << endl << endl;
-				cout << "Digite o novo sexo (M para masculino e F para feminino): ";
-				getline(cin, aux);
-				cout << endl;
+				do
+				{
+					cout << "Digite o novo sexo (M para masculino e F para feminino): ";
+					getline(cin, aux);
+					cout << endl;
 
-				if(validacaoChar(aux, 0) and (aux[0] == 'M' or aux[0] == 'F'))
-				{
-					registros[posicao].sexo = aux[0];
-				}
-				else
-				{
-					cout << "======================================================================================================================" << endl << endl;
-					cout << "Sexo inválido!!" << endl << endl;
-				}
+					if(validacaoChar(aux, 0) and (aux[0] == 'M' or aux[0] == 'F')) // verifica se o sexo é válido
+					{
+						registros[posicao].sexo = aux[0];
+						cout << "Sexo modificado!!" << endl << endl;
+					}
+					else
+					{
+						cout << "======================================================================================================================" << endl << endl;
+						cout << "Sexo inválido!!" << endl << endl;
+					}
+				} while (registros[posicao].sexo != 'M' and registros[posicao].sexo != 'F'); // repetição para que o usuário digite um sexo válido
 				
 				break;
 
 			case 4: // modificar a idade
 				do 
 				{
-					cout << "Digite a nova idade: ";
+					cout << "Digite a nova idade (número inteiro): ";
 					getline(cin, aux);
 					cout << endl;
 
@@ -825,13 +830,13 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						cout << "======================================================================================================================" << endl << endl;
 						cout << "Idade inválida!!" << endl << endl;
 					}
-				} while (not not aux.empty() and validacaoInt(aux));
+				} while (aux.empty() or not validacaoInt(aux));
 				break;
 
 			case 5: // modificar o país
 				do 
 				{
-					cout << "Digite o novo país: ";
+					cout << "Digite o novo país (até 25 caracteres): ";
 					getline(cin, aux);
 					cout << endl;
 
@@ -854,7 +859,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 			case 6: // modificar o passaporte
 				do 
 				{
-					cout << "Digite o novo passaporte: ";
+					cout << "Digite o novo número de passaporte (sequência de dígitos): ";
 					getline(cin, aux);
 					cout << endl;
 
@@ -865,9 +870,9 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					else
 					{
 						cout << "======================================================================================================================" << endl << endl;
-						cout << "Passaporte inválido!!" << endl << endl;
+						cout << "Número de passaporte inválido!!" << endl << endl;
 					}
-				} while (aux.empty() or not validacaoInt(aux) or aux.size() != 9);
+				} while (aux.empty() or not validacaoInt(aux));
 
 				if (buscaBinariaPassaporte(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para vericação da existencia não existencia do novo passaporte
 				{	
@@ -876,7 +881,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						ordenacaoID(quantidadeDeRegistros, registros);
 					}
 					registros[posicao].passaporte = numeroAux;
-					cout << "Passaporte modificado!!" << endl << endl;
+					cout << "Número de passaporte modificado!!" << endl << endl;
 				}
 				else
 				{
@@ -884,14 +889,14 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					{
 						ordenacaoID(quantidadeDeRegistros, registros);
 					}
-					cout << "ERRO. O passaporte já foi registrado" << endl << endl;
+					cout << "ERRO. O número de passaporte já foi registrado" << endl << endl;
 				}
 				break;
 
 			case 7: // modificar o idioma
 				do 
 				{
-					cout << "Digite o novo idioma: ";
+					cout << "Digite o novo idioma (até 20 caracteres): ";
 					getline(cin, aux);
 					cout << endl;
 
@@ -914,7 +919,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 			case 8: // modificar a modalidade
 				do 
 				{
-					cout << "Digite a nova modalidade: ";
+					cout << "Digite a nova modalidade (até 25 caracteres): ";
 					getline(cin, aux);
 					cout << endl;
 
@@ -938,7 +943,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				cin.ignore();
 				do 
 				{
-					cout << "Digite a nova preferência de comida: ";
+					cout << "Digite a nova preferência de comida (até 25 caracteres): ";
 					getline(cin, aux);
 					cout << endl;
 
@@ -998,6 +1003,8 @@ void escritaTela(int quantidadeDeRegistros, atletas* registros) // responsável 
 		switch (opcao)
 		{
 		case 1: // mostrar todo o registro
+			cout << "Identificador" << " | " << "Nome" << " | " << "Sexo" << " | " << "Idade" << " | " << "País" << " | " << "Número do Passaporte" << " | " << "Primeiro Idioma Falado" << " | " << "Modalidade" << " | " << "Preferência de Comida" << endl << endl; // cabeçalho
+
 			for(int i = 0; i < quantidadeDeRegistros; i++)
 			{
 				cout << registros[i].identificador << " | " << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
@@ -1056,6 +1063,8 @@ void escritaTela(int quantidadeDeRegistros, atletas* registros) // responsável 
 				}
 				
 			} while (inicio > fim or fim > quantidadeDeRegistros); // verifica se a posição é válida
+
+			cout << "Identificador" << " | " << "Nome" << " | " << "Sexo" << " | " << "Idade" << " | " << "País" << " | " << "Número do Passaporte" << " | " << "Primeiro Idioma Falado" << " | " << "Modalidade" << " | " << "Preferência de Comida" << endl << endl; // cabeçalho
 
 			for(int i = inicio - 1; i < fim; i++)
 			{
