@@ -1,102 +1,102 @@
 ﻿#identificador(int),nome(string com espaço),sexo(char),idade(int),pais(string com espaço),numero passaporte(int),primeiro idioma(string),modalidade(string com espaço),preferencia de comida(string com espaço)
 100
-1,Caeleb Dressel,M,27,EUA,384729184,Inglês,natação,Hambúrguer
-2,Simone Biles,F,27,EUA,928374645,Inglês,ginástica artística,Sanduíche
-3,Novak Djokovic,M,37,Sérvia,203948576,Sérvio,tênis,Ćevapi
-4,Armand Duplantis,M,24,Suécia,560283910,Sueco,salto com vara,Köttbullar
-5,Eliane Thompson-Herah,F,32,Jamaica,736290451,Inglês,atletismo,Jerk Chicken
-6,Katie Ledecky,F,25,EUA,248693570,Inglês,natação,Mac 'n Cheese
-7,Karsten Warholm,M,28,Noruega,572983614,Norueguês,atletismo,Klippfisk
-8,Dina Asher-Smith,F,28,Reino Unido,897120643,Inglês,atletismo,Fish and Chips
-9,Andre De Grasse,M,29,Canadá,109283746,Francês,atletismo,Poutine
-10,Athing Mu,F,23,EUA,501728934,Inglês,atletismo,Ovos com bacon
-11,Sifan Hassan,F,30,Países Baixos,607294831,Holandês,atletismo,Stroopwafel
-12,Linoy Ashram,F,24,Israel,184930257,Hebraico,ginástica rítmica,Hummus
-13,Tom Daley,M,29,Reino Unido,849302658,Inglês,saltos ornamentais,Sunday Roast
-14,Caleb Dressel,M,27,EUA,453829107,Inglês,natação,Salada
-15,Yulimar Rojas,F,29,Venezuela,910483726,Espanhol,atletismo,Arepas
-16,Neeraj Chopra,M,25,Índia,314826059,Hindi,atletismo,Masala Dosa
-17,Tatjana Schoenmaker,F,27,África do Sul,946275031,Áfrikaans,natação,Bobotie
-18,Joshua Cheptegei,M,27,Uganda,589463710,Luganda,atletismo,Matoke
-19,Mondo Duplantis,M,24,Suécia,238405690,Sueco,salto com vara,Köttbullar
-20,Valentina Veretennikova,F,30,Rússia,982645317,Russo,remo,Borscht
-21,Viktor Axelsen,M,29,Dinamarca,642189053,Dinamarquês,badminton,Smørrebrød
-22,Naomi Osaka,F,26,Japão,729845601,Japonês,tênis,Sushi
-23,Lee Kiefer,F,30,EUA,281346579,Inglês,esgrima,Peixe assado
-24,Matty Lee,M,27,Reino Unido,601472839,Inglês,saltos ornamentais,Sunday Roast
-25,Lasha Talakhadze,M,31,Geórgia,471859203,Georgiano,halterofilismo,Khachapuri
-26,Caleb Williams,M,25,EUA,586937102,Inglês,futebol,Waffles
-27,Christian Taylor,M,34,EUA,708395461,Inglês,atletismo,Hambúrguer
-28,Michael Norman,M,27,EUA,402876913,Inglês,atletismo,Cobb salad
-29,Larisa Iordache,F,24,Romênia,263804571,Romeno,ginástica artística,Sarmale
-30,Emma McKeon,F,29,Austrália,592380147,Inglês,natação,Meat Pie
-31,Marcell Jacobs,M,29,Itália,109473625,Italiano,atletismo,Pizza
-32,Aliya Mustafina,F,29,Rússia,908243761,Russo,ginástica artística,Borscht
-33,Guido Migliozzi,M,26,Itália,614298375,Italiano,golfe,Pizza
-34,Tamyra Mensah-Stock,F,28,EUA,357628104,Inglês,luta livre,Waldorf salad
-35,Joshua Kutryk,M,30,Canadá,814597263,Inglês e Francês,remo,Poutine
-36,Shoma Uno,M,26,Japão,572894310,Japonês,patinação artística,Sushi
-37,Li Xuerui,F,32,China,483210697,Chinês,badminton,Dim Sum
-38,Simone Manuel,F,27,EUA,736948210,Inglês,natação,Bolo de carne
-39,Sarah Sjöström,F,30,Suécia,921587643,Sueco,natação,Köttbullar
-40,Richard Carapaz,M,30,Equador,684290537,Espanhol,ciclismo,Ceviche
-41,Hend Zaza,F,15,Síria,314659278,Árabe,tênis de mesa,Fattoush
-42,Elina Svitolina,F,29,Ucrânia,987654310,Ucraniano,tênis,Borscht
-43,Steven Lopez,M,29,EUA,204876531,Inglês,esgrima,Bife grelhado
-44,Michael Phelps,M,39,EUA,637204851,Inglês,natação,Tacos
-45,Matt Fraser,M,34,EUA,738415026,Inglês,levantamento de peso,Cheesecake
-46,Caster Semenya,F,32,África do Sul,504281736,Áfrikaans,atletismo,Bobotie
-47,Kristof Milak,M,23,Hungria,648927530,Húngaro,natação,Gulyás
-48,Gabriel Medina,M,31,Brasil,902318476,Português,surfe,Feijoada
-49,Ryohei Kato,M,29,Japão,231947850,Japonês,judô,Sushi
-50,James Guy,M,28,Reino Unido,549836102,Inglês,natação,Sunday Roast
-51,Brigid Kosgei,F,30,Quênia,864307591,Kiswahili,atletismo,Ugali
+1,Gerónimo Rulli,M,32,Argentina,384729184,Espanhol,futebol,Assado
+2,Leandro Brey,M,22,Argentina,928374645,Espanhol,fufutebol,Choripan
+3,Bruno Amione,M,23,Argentina,203948576,Espanhol,futebol,Empanadas
+4,Marcos Di Césare,M,22,Argentina,560283910,Espanhol,futebol,Locro
+5,Nicolás Otamendi,M,36,Argentina,736290451,Espanhol,futebol,Provoleta
+6,Gonzalo Luján,M,23,Argentina,248693570,Espanhol,futebol,Carbonada
+7,Joaquín García,M,23,Argentina,572983614,Espanhol,futebol,Matambre arrolado
+8,Julio Soler,M,19,Argentina,897120643,Espanhol,futebol,Humitas
+9,Santiago Hezze,M,23,Argentina,109283746,Espanhol,futebol,Sorrentinos
+10,Cristian Medina,M,22,Argentina,501728934,Espanhol,futebol,Fugazzeta
+11,Ezequiel Fernández,M,22,Argentina,607294831,Espanhol,futebol,Parrillada
+12,Kevin Zenon,M,23,Argentina,184930257,Espanhol,futebol,Medialuna
+13,Claudio Echeverri,M,19,Argentina,849302658,Espanhol,futebol,Bife de chorizo
+14,Thiago Almada,M,23,Argentina,453829107,Espanhol,futebol,Tortillas releñas
+15,Luciano Gondou,M,23,Argentina,910483726,Espanhol,futebol,Alfajor
+16,Julián Álvarez,M,24,Argentina,314826059,Espanhol,futebol,Pasta frola
+17,Giuliano Simeone,M,22,Argentina,946275031,Italiano,futebol,Carbonara
+18,Lucas Beltrán,M,23,Argentina,589463710,Espanhol,futebol,Milanesa
+19,Aarón Quirós,M,23,Argentina,238405690,Espanhol,futebol,Lomo
+20,Juan Ignacio Nardoni,M,22,Argentina,982645317,Espanhol,futebol,Fugazzeta
+21,Federico Redondo,M,22,Argentina,642189053,Espanhol,futebol,Choripan
+22,Fabricio Iacovich,M,22,Argentina,729845601,Espanhol,futebol,Parrillada
+23,Bam Adebayo,M,27,EUA,281346579,Inglês,basquete,Cheesesteak
+24,Devin Booker,M,28,EUA,601472839,Inglês,basquete,Pizza
+25,Anthony Davis,M,31,EUA,471859203,Inglês,basquete,Buffalo wings
+26,Kevin Durant,M,36,EUA,586937102,Inglês,basquete,Boston cream pie
+27,Anthony Edwards,M,23,EUA,708395461,Inglês,basquete,Crab cakes
+28,Joel Embiid,M,30,EUA,402876913,Basaa,basquete,Camarão
+29,Tyrese Haliburton,M,24,EUA,263804571,Inglês,basquete,Clam chowder
+30,Jrue Holiday,M,34,EUA,592380147,Inglês,basquete,Lobster roll
+31,LeBron James,M,40,EUA,109473625,Inglês,basquete,Fried chicken
+32,Derrick White,M,30,EUA,908243761,Inglês,basquete,Cajun & Creole
+33,Jayson Tatum,M,26,EUA,614298375,Inglês,basquete,Cincinnati chili
+34,Stephen Curry,M,36,EUA,357628104,Inglês,basquete,French dip
+35,Gabriela Moreschi,F,30,Brasil,814597263,Português,handebol,Salpicão
+36,Renata Arruda,F,22,Brasil,572894310,Português,handebol,Macarronada
+37,Bárbara Arenhardt,F,38,Brasil,483210697,Português,handebol,Arroz carreteiro
+38,Adriana Cardoso,F,34,Brasil,736948210,Português,handebol,Tapioca
+39,Ana Cláudia Bolzan,F,28,Brasil,921587643,Português,handebol,Vaca atolada
+40,Jéssica Quintino,F,33,Brasil,684290537,Português,handebol,Frango com quiabo
+41,Larissa Araújo,F,32,Brasil,314659278,Português,handebol,Bobó de camarão
+42,Bruna de Paula,F,28,Brasil,987654310,Português,handebol,Rabada
+43,Gabriela Bitolo,F,25,Brasil,204876531,Português,handebol,Galinhada
+44,Giulia Guariero,F,26,Brasil,637204851,Português,handebol,Picadinho de carne
+45,Jhenifer dos Santos,F,24,Brasil,738415026,Português,handebol,Arroz com pequi
+46,Kelly Rosa,F,25,Brasil,504281736,Português,handebol,Virado à paulista
+47,Mariana Fernandes,F,28,Brasil,648927530,Português,handebol,Baião de dois
+48,Patrícia Matieli,F,36,Brasil,902318476,Português,handebol,Batata com carne moída
+49,Samara Vieira,F,33,Brasil,231947850,Português,handebol,Moqueca
+50,Marcela Arouinian,F,25,Brasil,54983610,Português,handebol,Peixe grelhado
+51,Tamires Araújo,F,30,Brasil,864307591,Português,handebol,Carne seca
 52,Matthew Centrowitz,M,33,EUA,384510629,Inglês,atletismo,Peixe assado
 53,Lasha Talakhadze,M,31,Geórgia,927564810,Georgiano,levantamento de peso,Khachapuri
 54,Liana Gutsul,F,25,Ucrânia,582374910,Ucraniano,atletismo,Varenyky
 55,Dawn Harper-Nelson,F,40,EUA,193746582,Inglês,atletismo,Costela de porco
 56,Katie Taylor,F,37,Irlanda,460572391,Inglês,boxe,Irish Stew
-57,Abby Wambach,F,43,EUA,730614982,Inglês,futebol,Panquecas
+57,Mondo Duplantis,M,24,Suécia,730614982,Sueco,salto com vara,Köttbullar
 58,Lin Dan,M,41,China,823964501,Chinês,badminton,Dim Sum
 59,Jasmine Camacho-Quinn,F,27,Porto Rico,490728635,Espanhol,atletismo,Arroz com Gandules
-60,Anna Shcherbakova,F,20,Rússia,305987462,Russo,patinação artística,Borscht
-61,Angel Mena,M,31,Equador,571820349,Espanhol,futebol,Ceviche
+60,Valentina Veretennikova,F,30,Rússia,305987462,Russo,remo,Borscht
+61,Naomi Osaka,F,26,Japão,571820349,Japonês,tênis,Sushi
 62,Isabell Werth,F,55,Alemanha,204976513,Alemão,hipismo,Sauerbraten
-63,Marcel Hirscher,M,34,Áustria,487502619,Alemão,esqui alpino,Apfelstrudel
-64,Michaela Shiffrin,F,28,EUA,364870195,Inglês,esqui alpino,Hambúrguer
+63,Lee Kiefer,F,30,EUA,487502619,Inglês,esgrima,Peixe assado
+64,Matty Lee,M,27,Reino Unido,364870195,Inglês,saltos ornamentais,Sunday Roast
 65,Jennifer Valente,F,28,EUA,529647810,Inglês,ciclismo,Pizza
 66,Sydney McLaughlin,F,24,EUA,217508639,Inglês,atletismo,Brownie
 67,Jakub Vadlejch,M,32,República Tcheca,365420897,Checo,atletismo,Svíčková
 68,Akeem Bloomfield,M,28,Jamaica,908473512,Inglês,atletismo,Jerk Chicken
 69,Ma Long,M,35,China,239475681,Chinês,tênis de mesa,Dim Sum
 70,Saori Yoshida,F,38,Japão,760123489,Japonês,luta livre,Sushi
-71,Marit Bjørgen,F,44,Noruega,105746829,Norueguês,esqui cross-country,Pinnekjøtt
+71,Christian Taylor,M,34,EUA,105746829,Inglês,atletismo,Hambúrguer
 72,Tomasz Majewski,M,42,Polônia,487503269,Polonês,atletismo,Bigos
-73,Millie Knight,F,25,Reino Unido,831290647,Inglês,esqui alpino,Full English Breakfast
-74,Lindsey Vonn,F,39,EUA,905736481,Inglês,esqui alpino,Biscuits and gravy
+73,Michael Norman,M,27,EUA,831290647,Inglês,atletismo,Cobb salad
+74,Larisa Iordache,F,24,Romênia,905736481,Romeno,ginástica artística,Sarmale
 75,Clarissa Shields,F,29,EUA,763019484,Inglês,boxe,Almôndegas
 76,Tomomi Okamura,F,30,Japão,381265749,Japonês,judô,Sushi
 77,David Weir,M,45,Reino Unido,539218476,Inglês,atletismo,Sunday Roast
 78,Jennifer Brady,F,29,EUA,649287531,Inglês,tênis,Purê de batata
 79,Kyle Chalmers,M,26,Austrália,308742516,Inglês,natação,Meat Pie
 80,Kristina Mladenovic,F,30,França,471206395,Francês,tênis,Baguette
-81,Jorge González,M,30,Cuba,847592630,Espanhol,basquete,Arroz con Pollo
-82,Layshia Clarendon,F,33,EUA,618342795,Inglês,basquete,Mix de legumes
-83,Kevin Durant,M,35,EUA,763289541,Inglês,basquete,Mashed potatoes
+81,Emma McKeon,F,29,Austrália,847592630,Inglês,natação,Meat Pie
+82,Marcell Jacobs,M,29,Itália,618342795,Italiano,atletismo,Pizza
+83,Aliya Mustafina,F,29,Rússia,763289541,Russo,ginástica artística,Borscht
 84,Sifan Hassan,F,30,Países Baixos,930472681,Holandês,atletismo,Stroopwafel
-85,Gabriel Santos,M,28,Brasil,749206183,Português,basquete,Churrasco
+85,Guido Migliozzi,M,26,Itália,749206183,Italiano,golfe,Pizza
 86,Tessa Virtue,F,35,Canadá,203874561,Inglês,patinação artística,Poutine
 87,Tim Walther,M,28,Alemanha,651372908,Alemão,remo,Wiener Schnitzel
 88,Chloe Kim,F,24,EUA,395671482,Inglês,snowboard,Hambúrguer
 89,Ronda Rousey,F,36,EUA,738210596,Inglês,judô,Apple pie
 90,Mackenzie Brown,F,28,EUA,846320759,Inglês,tiro com arco,Caesar salad
 91,Jakob Ingebrigtsen,M,23,Noruega,736214850,Norueguês,atletismo,Klippfisk
-92,Eileen Gu,F,21,China,429681035,Chinês,esqui freestyle,Dim Sum
+92,Tamyra Mensah-Stock,F,28,EUA,429681035,Inglês,luta livre,Waldorf salad
 93,Keely Hodgkinson,F,23,Reino Unido,138692745,Inglês,atletismo,Fish and Chips
-94,Zhou Qi,M,29,China,294581763,Chinês,basquete,Dim Sum
+94,Joshua Kutryk,M,30,Canadá,294581763,Inglês e Francês,remo,Poutine
 95,Simone Biles,F,27,EUA,582019374,Inglês,ginástica artística,Chips de banana
-96,Muhammad Ali,M,44,EUA,192837465,Inglês,boxe,Hambúrguer
-97,Eric Liddell,M,35,Reino Unido,476193582,Inglês,atletismo,Sunday Roast
+96,Simone Manuel,F,27,EUA,192837465,Inglês,natação,Bolo de carne
+97,Sarah Sjöström,F,30,Suécia,476193582,Sueco,natação,Köttbullar
 98,Kevin Mayer,M,33,França,928451736,Francês,atletismo,Baguette
 99,Tamyra Mensah-Stock,F,28,EUA,675409381,Inglês,luta livre,Waffles
-100,Patrick Mahomes,M,28,EUA,184627395,Inglês,futebol americano,Kafta
+100,Li Xuerui,F,32,China,184627395,Chinês,badminton,Dim Sum
