@@ -9,25 +9,13 @@ struct atletas // estrutura que guarda todas as informações de registro dos at
 {
 	int identificador, idade;
 	int passaporte;
-	char nome[35], pais[25], idioma[20], modalidade[25], preferenciaComida[25]; 
+	char nome[36], pais[26], idioma[21], modalidade[26], preferenciaComida[26]; // declaração do tamanho do vetor de char com uma posição mais para que o último caractere seja o '\0'
 	char sexo;
 };
 
-bool validacaoChar(string teste, int tamChar) // valida se o input possui o tamanho correto
-{
-	int tamanhos[5] = {1, 20, 25, 35}; // tamanhos possíveis para cada tipo de dado
-
-	if (teste.size() > tamanhos[tamChar])
-	{
-		return false;
-	}
-
-	return true;
-}
-
 bool validacaoInt(string aux) // verifica se o que foi digitado é um número inteiro
 {
-	for (int i = 0; i < aux.size(); i++)
+	for (long unsigned int i = 0; i < aux.size(); i++)
 	{
 		if (not isdigit(aux[i]))
 		{
@@ -222,7 +210,8 @@ int leituraTipado(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistr
 	{
 		entrada.seekg (0, entrada.end);
     	quantidadeDeRegistros = entrada.tellg();
-		quantidadeDeRegistros /= 144;
+		cout << quantidadeDeRegistros << endl;
+		quantidadeDeRegistros /= 148;
 		entrada.seekg (0, entrada.beg);
 	}
 	else // mensagem de erro e retorno para o menu inicial
@@ -445,19 +434,17 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		getline(cin, aux);
 		cout << endl;
 
-		if(validacaoChar(aux, 3)) // verifica se o nome é válido
+		if(aux.size() <= 35 and not aux.empty()) // verifica se o nome é válido
 		{
-			for (int i = 0; i < 35; i++)
-			{
-				registros[posicao].nome[i] = aux[i];
-			}
+			copy(aux.begin(), aux.end(), registros[posicao].nome);
+			registros[posicao].nome[aux.size()] = '\0';
 		}
 		else
 		{
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Nome inválido!!" << endl << endl;
 		}
-	} while (not validacaoChar(aux, 3)); // repetição para que o usuário digite um nome válido
+	} while (aux.size() > 35 or aux.empty()); // repetição para que o usuário digite um nome válido
 	
 	// sexo
 	do
@@ -466,7 +453,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		getline(cin, aux);
 		cout << endl;
 
-		if(validacaoChar(aux, 0) and (aux[0] == 'M' or aux[0] == 'F')) // verifica se o sexo é válido
+		if((aux.size() == 1) and (aux[0] == 'M' or aux[0] == 'F')) // verifica se o sexo é válido
 		{
 			registros[posicao].sexo = aux[0];
 		}
@@ -501,19 +488,17 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		getline(cin, aux);
 		cout << endl;
 
-		if(validacaoChar(aux, 2)) // verifica se o país é válido
+		if(aux.size() <= 25 and not aux.empty()) // verifica se o país é válido
 		{
-			for (int i = 0; i < 25; i++)
-			{
-				registros[posicao].pais[i] = aux[i];
-			}
+			copy(aux.begin(), aux.end(), registros[posicao].pais);
+			registros[posicao].pais[aux.size()] = '\0';
 		}	
 		else
 		{
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "País inválido!!" << endl << endl;
 		}
-	} while (not validacaoChar(aux, 2)); // repetição para que o usuário digite um país válido
+	} while (aux.size() > 25 or aux.empty()); // repetição para que o usuário digite um país válido
 
 	// passaporte
 	do
@@ -546,19 +531,17 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		getline(cin, aux);
 		cout << endl;
 
-		if(validacaoChar(aux, 1)) // verifica se o idioma é válido
+		if(aux.size() <= 20 and not aux.empty()) // verifica se o idioma é válido
 		{
-			for (int i = 0; i < 20; i++)
-			{
-				registros[posicao].idioma[i] = aux[i];
-			}
+			copy(aux.begin(), aux.end(), registros[posicao].idioma);
+			registros[posicao].idioma[aux.size()] = '\0';
 		}
 		else
 		{
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Idioma inválido!!" << endl << endl;
 		}
-	} while (not validacaoChar(aux, 1)); // repetição para que o usuário digite um idioma válido
+	} while (aux.size() > 20 or aux.empty()); // repetição para que o usuário digite um idioma válido
 	
 	// modalidade
 	do
@@ -567,19 +550,17 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		getline(cin, aux);
 		cout << endl;
 
-		if (validacaoChar(aux, 2)) // verifica se a modalidade é válida
+		if (aux.size() <= 25 and not aux.empty()) // verifica se a modalidade é válida
 		{
-			for (int i = 0; i < 25; i++)
-			{
-				registros[posicao].modalidade[i] = aux[i];
-			}
+			copy(aux.begin(), aux.end(), registros[posicao].modalidade);
+			registros[posicao].modalidade[aux.size()] = '\0';
 		}
 		else
 		{
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Modalidade inválida!!" << endl << endl;
 		}
-	} while (not validacaoChar(aux, 2)); // repetição para que o usuário digite uma modalidade válida
+	} while (aux.size() > 25 or aux.empty()); // repetição para que o usuário digite uma modalidade válida
 	
 	// preferência de comida
 	do
@@ -588,19 +569,17 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 		getline(cin, aux);
 		cout << endl;
 
-		if(validacaoChar(aux, 2)) // verifica se a preferência de comida é válida
+		if(aux.size() <= 25 and not aux.empty()) // verifica se a preferência de comida é válida
 		{
-			for (int i = 0; i < 25; i++)
-			{
-				registros[posicao].preferenciaComida[i] = aux[i];
-			}
+			copy(aux.begin(), aux.end(), registros[posicao].preferenciaComida);
+			registros[posicao].preferenciaComida[aux.size()] = '\0';
 		}
 		else
 		{
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Preferência de comida inválida!!" << endl << endl;
 		}
-	} while (not validacaoChar(aux, 2)); // repetição para que o usuário digite uma preferência de comida válida
+	} while (aux.size() > 25 or aux.empty()); // repetição para que o usuário digite uma preferência de comida válida
 
 	cout << "Novo registro cadastrado!!" << endl << endl;
 
@@ -772,23 +751,25 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				break;
 			
 			case 2: // modificar o nome
-				cout << "Digite o novo nome (até 35 caracteres): ";
-				getline(cin, aux);
-				cout << endl;
+				
+				do
+				{
+					cout << "Digite o novo nome (até 35 caracteres): ";
+					getline(cin, aux);
+					cout << endl;
 
-				if (validacaoChar(aux, 3)) // verifica se o nome é válido
-				{
-					for(int i = 0; i < 35; i++)
+					if ((aux.size() <= 35) and (not aux.empty())) // verifica se o nome é válido
 					{
-						registros[posicao].nome[i] = aux[i];
+						copy(aux.begin(), aux.end(), registros[posicao].nome);
+						registros[posicao].nome[aux.size()] = '\0';
+						cout << "Nome modificado!!" << endl << endl;
 					}
-					cout << "Nome modificado!!" << endl << endl;
-				}
-				else
-				{
-					cout << "======================================================================================================================" << endl << endl;
-					cout << "Nome inválido!!" << endl << endl;
-				}
+					else
+					{
+						cout << "======================================================================================================================" << endl << endl;
+						cout << "Nome inválido!!" << endl << endl;
+					}
+				} while ((aux.size() > 35) or (aux.empty())); // repetição para que o usuário digite um nome válido
 				
 				break;
 
@@ -800,7 +781,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					getline(cin, aux);
 					cout << endl;
 
-					if(validacaoChar(aux, 0) and (aux[0] == 'M' or aux[0] == 'F')) // verifica se o sexo é válido
+					if((aux.size() == 1) and (aux[0] == 'M' or aux[0] == 'F')) // verifica se o sexo é válido
 					{
 						registros[posicao].sexo = aux[0];
 						cout << "Sexo modificado!!" << endl << endl;
@@ -840,12 +821,10 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					getline(cin, aux);
 					cout << endl;
 
-					if (validacaoChar(aux, 2)) // verifica se o país é válido
+					if ((aux.size() <= 25) and (not aux.empty())) // verifica se o país é válido
 					{
-						for(int i = 0; i < 25; i++)
-						{
-							registros[posicao].pais[i] = aux[i];
-						}
+						copy(aux.begin(), aux.end(), registros[posicao].pais);
+						registros[posicao].pais[aux.size()] = '\0';
 						cout << "País modificado!!" << endl << endl;
 					}
 					else
@@ -853,7 +832,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						cout << "======================================================================================================================" << endl << endl;
 						cout << "País inválido!!" << endl << endl;
 					}
-				} while (not validacaoChar(aux, 2));
+				} while ((aux.size() > 25) or (aux.empty())); 
 				break;
 
 			case 6: // modificar o passaporte
@@ -900,12 +879,10 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					getline(cin, aux);
 					cout << endl;
 
-					if (validacaoChar(aux, 1)) // verifica se o idioma é válido
+					if ((aux.size() <= 20) and (not aux.empty())) // verifica se o idioma é válido
 					{
-						for(int i = 0; i < 20; i++)
-						{
-							registros[posicao].idioma[i] = aux[i];
-						}
+						copy(aux.begin(), aux.end(), registros[posicao].idioma);
+						registros[posicao].idioma[aux.size()] = '\0';
 						cout << "Idioma modificado!!" << endl << endl;
 					}
 					else
@@ -913,7 +890,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						cout << "======================================================================================================================" << endl << endl;
 						cout << "Idioma inválido!!" << endl << endl;
 					}
-				} while (not validacaoChar(aux, 1));
+				} while ((aux.size() > 20) or (aux.empty()));
 				break;
 
 			case 8: // modificar a modalidade
@@ -923,44 +900,39 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					getline(cin, aux);
 					cout << endl;
 
-					if (not validacaoChar(aux, 2)) // verifica se a modalidade é válida
+					if ((aux.size() <= 25) and (not aux.empty())) // verifica se a modalidade é válida
+					{
+						copy(aux.begin(), aux.end(), registros[posicao].modalidade);
+						registros[posicao].modalidade[aux.size()] = '\0';
+						cout << "Modalidade modificada!!" << endl << endl;
+					}
+					else
 					{
 						cout << "======================================================================================================================" << endl << endl;
 						cout << "Modalidade inválida!!" << endl << endl;
 					}
-					else
-					{
-						for(int i = 0; i < 25; i++)
-						{
-							registros[posicao].modalidade[i] = aux[i];
-						}
-						cout << "Modalidade modificada!!" << endl << endl;
-					}
-				} while (not validacaoChar(aux, 2));
+				} while ((aux.size() > 25) or (aux.empty()));
 				break;
 
 			case 9: // modificar a preferência de comida
-				cin.ignore();
 				do 
 				{
 					cout << "Digite a nova preferência de comida (até 25 caracteres): ";
 					getline(cin, aux);
 					cout << endl;
 
-					if (not validacaoChar(aux, 2)) // verifica se a preferência de comida é válida
+					if ((aux.size() <= 25) and (not aux.empty())) // verifica se a preferência de comida é válida
+					{
+						copy(aux.begin(), aux.end(), registros[posicao].preferenciaComida);
+						registros[posicao].preferenciaComida[aux.size()] = '\0';
+						cout << "Preferência de comida modificada!!" << endl << endl;
+					}
+					else
 					{
 						cout << "======================================================================================================================" << endl << endl;
 						cout << "Preferência de comida inválida!!" << endl << endl;
 					}
-					else
-					{
-						for(int i = 0; i < 25; i++)
-						{
-							registros[posicao].preferenciaComida[i] = aux[i];
-						}
-						cout << "Preferência de comida modificada!!" << endl << endl;
-					}
-				} while (not validacaoChar(aux, 2));
+				} while ((aux.size() > 25) or (aux.empty()));
 				break;
 
 			case 0: // volta para o menu principal
