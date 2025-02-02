@@ -684,13 +684,13 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 	if (posicao != -1) // condicional para verificar se a busca foi realizada e abrir o menu de modificação
 	{
 		int numeroAux; // variável auxiliar para armazenar os novos valores e verificar se são válidos
-
+		atletas aModificar = registros[posicao];
 		do
 		{
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Identificador" << " | " << "Nome" << " | " << "Sexo" << " | " << "Idade" << " | " << "País" << " | " << "Número do Passaporte" << " | " << "Primeiro Idioma Falado" << " | " << "Modalidade" << " | " << "Preferência de Comida" << endl << endl; // cabeçalho
 
-			cout << registros[posicao].identificador << " | " << registros[posicao].nome << " | " << registros[posicao].sexo << " | " << registros[posicao].idade << " | " << registros[posicao].pais << " | " << registros[posicao].passaporte << " | " << registros[posicao].idioma << " | " << registros[posicao].modalidade << " | " << registros[posicao].preferenciaComida << endl << endl;
+			cout << aModificar.identificador << " | " << aModificar.nome << " | " << aModificar.sexo << " | " << aModificar.idade << " | " << aModificar.pais << " | " << aModificar.passaporte << " | " << aModificar.idioma << " | " << aModificar.modalidade << " | " << aModificar.preferenciaComida << endl << endl;
 
 			cout << "======================================================================================================================" << endl << endl;
 			cout << "Deseja modificar algum dado do registro ?" << endl << endl << "1. Identificador" << endl << "2. Nome" << endl << "3. Sexo" << endl << "4. Idade" << endl << "5. País" << endl << "6. Passaporte" << endl << "7. Idioma" << endl << "8. Modalidade" << endl << "9. Preferencia de comida" << endl << "0. Não" << endl << endl;
@@ -737,15 +737,11 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 					{
 						ordenacaoPassaporte(quantidadeDeRegistros, registros);
 					}
-					registros[posicao].identificador = numeroAux;
+					aModificar.identificador = numeroAux;
 					cout << "Identificador modificado!!" << endl << endl;
 				}
 				else
 				{
-					if(selecionado == 2)
-					{
-						ordenacaoPassaporte(quantidadeDeRegistros, registros);
-					}
 					cout << "ERRO. O identificador já for registrado" << endl << endl;
 				}
 				break;
@@ -760,8 +756,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 35) and (not aux.empty())) // verifica se o nome é válido
 					{
-						copy(aux.begin(), aux.end(), registros[posicao].nome);
-						registros[posicao].nome[aux.size()] = '\0';
+						copy(aux.begin(), aux.end(), aModificar.nome);
+						aModificar.nome[aux.size()] = '\0';
 						cout << "Nome modificado!!" << endl << endl;
 					}
 					else
@@ -783,7 +779,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if((aux.size() == 1) and (aux[0] == 'M' or aux[0] == 'F')) // verifica se o sexo é válido
 					{
-						registros[posicao].sexo = aux[0];
+						aModificar.sexo = aux[0];
 						cout << "Sexo modificado!!" << endl << endl;
 					}
 					else
@@ -791,7 +787,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						cout << "======================================================================================================================" << endl << endl;
 						cout << "Sexo inválido!!" << endl << endl;
 					}
-				} while (registros[posicao].sexo != 'M' and registros[posicao].sexo != 'F'); // repetição para que o usuário digite um sexo válido
+				} while (aux != "M" and aux != "F"); // repetição para que o usuário digite um sexo válido
 				
 				break;
 
@@ -804,7 +800,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if (not aux.empty() and validacaoInt(aux))
 					{
-						registros[posicao].idade = stoi(aux);
+						aModificar.idade = stoi(aux);
 					}
 					else
 					{
@@ -823,8 +819,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 25) and (not aux.empty())) // verifica se o país é válido
 					{
-						copy(aux.begin(), aux.end(), registros[posicao].pais);
-						registros[posicao].pais[aux.size()] = '\0';
+						copy(aux.begin(), aux.end(), aModificar.pais);
+						aModificar.pais[aux.size()] = '\0';
 						cout << "País modificado!!" << endl << endl;
 					}
 					else
@@ -855,11 +851,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 				if (buscaBinariaPassaporte(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para vericação da existencia não existencia do novo passaporte
 				{	
-					if(selecionado == 1) // condicional para que a ordenação se mantenha correta depois da busca
-					{
-						ordenacaoID(quantidadeDeRegistros, registros);
-					}
-					registros[posicao].passaporte = numeroAux;
+					aModificar.passaporte = numeroAux;
 					cout << "Número de passaporte modificado!!" << endl << endl;
 				}
 				else
@@ -881,8 +873,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 20) and (not aux.empty())) // verifica se o idioma é válido
 					{
-						copy(aux.begin(), aux.end(), registros[posicao].idioma);
-						registros[posicao].idioma[aux.size()] = '\0';
+						copy(aux.begin(), aux.end(), aModificar.idioma);
+						aModificar.idioma[aux.size()] = '\0';
 						cout << "Idioma modificado!!" << endl << endl;
 					}
 					else
@@ -902,8 +894,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 25) and (not aux.empty())) // verifica se a modalidade é válida
 					{
-						copy(aux.begin(), aux.end(), registros[posicao].modalidade);
-						registros[posicao].modalidade[aux.size()] = '\0';
+						copy(aux.begin(), aux.end(), aModificar.modalidade);
+						aModificar.modalidade[aux.size()] = '\0';
 						cout << "Modalidade modificada!!" << endl << endl;
 					}
 					else
@@ -923,8 +915,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 25) and (not aux.empty())) // verifica se a preferência de comida é válida
 					{
-						copy(aux.begin(), aux.end(), registros[posicao].preferenciaComida);
-						registros[posicao].preferenciaComida[aux.size()] = '\0';
+						copy(aux.begin(), aux.end(), aModificar.preferenciaComida);
+						aModificar.preferenciaComida[aux.size()] = '\0';
 						cout << "Preferência de comida modificada!!" << endl << endl;
 					}
 					else
@@ -945,6 +937,16 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				break;
 			}
 		} while (opcao != 0);
+		if (selecionado = 1)
+		{
+			ordenacaoID(quantidadeDeRegistros, registros);
+		}
+		else
+		{
+			ordenacaoPassaporte(quantidadeDeRegistros, registros);
+		}
+		
+		registros[posicao] = aModificar;
 	}
 }
 
