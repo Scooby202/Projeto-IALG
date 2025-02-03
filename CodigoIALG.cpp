@@ -277,17 +277,17 @@ int leituraCSV(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistros,
 		{
 			entrada >> registros[i].identificador;
 			entrada >> lixo;
-			entrada.getline(registros[i].nome, 35, ',');
+			entrada.getline(registros[i].nome, 36, ',');
 			entrada >> registros[i].sexo;
 			entrada >> lixo;
 			entrada >> registros[i].idade;
 			entrada >> lixo;
-			entrada.getline(registros[i].pais, 25, ',');
+			entrada.getline(registros[i].pais, 26, ',');
 			entrada >> registros[i].passaporte;
 			entrada >> lixo;
-			entrada.getline(registros[i].idioma, 20, ',');
-			entrada.getline(registros[i].modalidade, 25, ',');
-			entrada.getline(registros[i].preferenciaComida, 25);
+			entrada.getline(registros[i].idioma, 21, ',');
+			entrada.getline(registros[i].modalidade, 26, ',');
+			entrada.getline(registros[i].preferenciaComida, 26);
 			i++;
 		}
 		else
@@ -1209,6 +1209,14 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, a
 
 		case 5: // registos em um arquivo
 			gravarDados(quantidadeDeRegistros, tipoDeArq, registros, nomeDoArqAberto);
+			break;
+		
+		case 6:
+			for (int i = 0; i < 36; i++)
+			{
+				cout << registros[0].nome[i] << " | ";
+			}
+			
 			break;
 
 		case 0: // fechar o programa
