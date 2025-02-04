@@ -99,14 +99,12 @@ int buscaBinariaID(int quantidadeDeRegistros, int procurado, atletas* registros)
     int inicio = 0;
     int fim = quantidadeDeRegistros - 1;
     int meio;
-    int posicao = -1;
     while (inicio <= fim)
     {
         meio = (inicio + fim)/2;
         if (registros[meio].identificador == procurado)
         {
-            posicao = meio;
-            inicio = fim + 1;
+            return meio;
         }
 
         else
@@ -123,7 +121,7 @@ int buscaBinariaID(int quantidadeDeRegistros, int procurado, atletas* registros)
         }
     }
 
-    return posicao;
+    return -1;
 }
 
 int buscaBinariaPassaporte(int quantidadeDeRegistros, int procurado, atletas* registros) // busca binária para o passaporte 
@@ -133,14 +131,12 @@ int buscaBinariaPassaporte(int quantidadeDeRegistros, int procurado, atletas* re
     int inicio = 0;
     int fim = quantidadeDeRegistros - 1;
     int meio;
-    int posicao = -1;
     while (inicio <= fim)
     {
         meio = (inicio + fim)/2;
         if (registros[meio].passaporte == procurado)
         {
-            posicao = meio;
-            inicio = fim + 1;
+            return meio;
         }
 
         else
@@ -157,7 +153,7 @@ int buscaBinariaPassaporte(int quantidadeDeRegistros, int procurado, atletas* re
         }
     }
 
-    return posicao;
+    return -1;
 }
 
 int validacaoDoArquivo(int quantidadeDeRegistros, atletas* registros) // verifica no arquivo se há identificadores ou passaportes repetidos, comparando os adjascentes depois de ordenados
@@ -436,7 +432,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 		if(aux.size() <= 35 and not aux.empty()) // verifica se o nome é válido
 		{
-			copy(aux.begin(), aux.end(), registros[posicao].nome);
+			copy(&aux[0], &aux[aux.size()], registros[posicao].nome);
 			registros[posicao].nome[aux.size()] = '\0';
 		}
 		else
@@ -490,7 +486,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 		if(aux.size() <= 25 and not aux.empty()) // verifica se o país é válido
 		{
-			copy(aux.begin(), aux.end(), registros[posicao].pais);
+			copy(&aux[0], &aux[aux.size()], registros[posicao].pais);
 			registros[posicao].pais[aux.size()] = '\0';
 		}	
 		else
@@ -533,7 +529,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 		if(aux.size() <= 20 and not aux.empty()) // verifica se o idioma é válido
 		{
-			copy(aux.begin(), aux.end(), registros[posicao].idioma);
+			copy(&aux[0], &aux[aux.size()], registros[posicao].idioma);
 			registros[posicao].idioma[aux.size()] = '\0';
 		}
 		else
@@ -552,7 +548,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 		if (aux.size() <= 25 and not aux.empty()) // verifica se a modalidade é válida
 		{
-			copy(aux.begin(), aux.end(), registros[posicao].modalidade);
+			copy(&aux[0], &aux[aux.size()], registros[posicao].modalidade);
 			registros[posicao].modalidade[aux.size()] = '\0';
 		}
 		else
@@ -571,7 +567,7 @@ int adicionarRegistro(int &quantidadeDeRegistros, int &tamanhoVet, atletas* &reg
 
 		if(aux.size() <= 25 and not aux.empty()) // verifica se a preferência de comida é válida
 		{
-			copy(aux.begin(), aux.end(), registros[posicao].preferenciaComida);
+			copy(&aux[0], &aux[aux.size()], registros[posicao].preferenciaComida);
 			registros[posicao].preferenciaComida[aux.size()] = '\0';
 		}
 		else
@@ -733,10 +729,6 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 				if (buscaBinariaID(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para vericação da existencia não existencia do novo identificador
 				{
-					if(selecionado == 2) // condicional para que a ordenação se mantenha correta depois da busca
-					{
-						ordenacaoPassaporte(quantidadeDeRegistros, registros);
-					}
 					aModificar.identificador = numeroAux;
 					cout << "Identificador modificado!!" << endl << endl;
 				}
@@ -756,7 +748,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 35) and (not aux.empty())) // verifica se o nome é válido
 					{
-						copy(aux.begin(), aux.end(), aModificar.nome);
+						copy(&aux[0], &aux[aux.size()], aModificar.nome);
 						aModificar.nome[aux.size()] = '\0';
 						cout << "Nome modificado!!" << endl << endl;
 					}
@@ -819,7 +811,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 25) and (not aux.empty())) // verifica se o país é válido
 					{
-						copy(aux.begin(), aux.end(), aModificar.pais);
+						copy(&aux[0], &aux[aux.size()], aModificar.pais);
 						aModificar.pais[aux.size()] = '\0';
 						cout << "País modificado!!" << endl << endl;
 					}
@@ -856,10 +848,6 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				}
 				else
 				{
-					if(selecionado == 1)
-					{
-						ordenacaoID(quantidadeDeRegistros, registros);
-					}
 					cout << "ERRO. O número de passaporte já foi registrado" << endl << endl;
 				}
 				break;
@@ -873,7 +861,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 20) and (not aux.empty())) // verifica se o idioma é válido
 					{
-						copy(aux.begin(), aux.end(), aModificar.idioma);
+						copy(&aux[0], &aux[aux.size()], aModificar.idioma);
 						aModificar.idioma[aux.size()] = '\0';
 						cout << "Idioma modificado!!" << endl << endl;
 					}
@@ -894,7 +882,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 25) and (not aux.empty())) // verifica se a modalidade é válida
 					{
-						copy(aux.begin(), aux.end(), aModificar.modalidade);
+						copy(&aux[0], &aux[aux.size()], aModificar.modalidade);
 						aModificar.modalidade[aux.size()] = '\0';
 						cout << "Modalidade modificada!!" << endl << endl;
 					}
@@ -915,7 +903,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 
 					if ((aux.size() <= 25) and (not aux.empty())) // verifica se a preferência de comida é válida
 					{
-						copy(aux.begin(), aux.end(), aModificar.preferenciaComida);
+						copy(&aux[0], &aux[aux.size()], aModificar.preferenciaComida);
 						aModificar.preferenciaComida[aux.size()] = '\0';
 						cout << "Preferência de comida modificada!!" << endl << endl;
 					}
@@ -937,7 +925,8 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 				break;
 			}
 		} while (opcao != 0);
-		if (selecionado = 1)
+		
+		if (selecionado == 1)
 		{
 			ordenacaoID(quantidadeDeRegistros, registros);
 		}
@@ -981,7 +970,7 @@ void escritaTela(int quantidadeDeRegistros, atletas* registros) // responsável 
 
 			for(int i = 0; i < quantidadeDeRegistros; i++)
 			{
-				cout << registros[i].identificador << " | " << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
+				cout << registros[i].identificador << " | "  << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
 			}
 
 			cout << endl;
