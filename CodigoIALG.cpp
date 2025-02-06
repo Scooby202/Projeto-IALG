@@ -17,7 +17,7 @@ bool validacaoInt(string aux) // verifica se o que foi digitado é um número in
 {
 	for (long unsigned int i = 0; i < aux.size(); i++)
 	{
-		if (not isdigit(aux[i]))
+		if (not isdigit(aux[i]) or aux.size() > 9) // verifica se o caractere é um dígito e se o número é menor que 10^9
 		{
 			return false;
 		}
@@ -967,7 +967,7 @@ void escritaTela(int quantidadeDeRegistros, atletas* registros) // responsável 
 
 			for(int i = 0; i < quantidadeDeRegistros; i++)
 			{
-				cout << registros[i].identificador << " | "  << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
+				cout << registros[i].identificador << " | " << registros[i].nome << " | " << registros[i].sexo << " | " << registros[i].idade << " | " << registros[i].pais << " | " << registros[i].passaporte << " | " << registros[i].idioma << " | " << registros[i].modalidade << " | " << registros[i].preferenciaComida << endl << endl;
 			}
 
 			cout << endl;
