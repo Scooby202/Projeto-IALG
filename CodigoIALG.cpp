@@ -1194,7 +1194,7 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, a
 				escritaTela(quantidadeDeRegistros, registros);
 				break;
 
-			case 5: // registos em um arquivo
+			case 5: // gravar registros em um arquivo
 				gravarDados(quantidadeDeRegistros, tipoDeArq, registros, nomeDoArqAberto);
 				break;
 
