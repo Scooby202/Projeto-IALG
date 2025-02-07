@@ -1132,7 +1132,7 @@ void gravarDados(int quantidadeDeRegistros, int tipoArqAberto, atletas* registro
 	} while (opcao != 0);
 }
 
-void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, atletas* &registros, string nomeDoArqAberto) // menu com as principais funções do programar
+void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, atletas* &registros, string nomeDoArqAberto) // menu com as principais funções do programa
 {
 	int opcao;
 	int verifica;
