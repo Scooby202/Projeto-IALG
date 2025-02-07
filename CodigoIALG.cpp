@@ -1212,7 +1212,7 @@ void menuPrincipal(int &quantidadeDeRegistros, int &tamanhoVet, int tipoDeArq, a
 
 int main() // inicia as variáveis, chama a abertura do arquivo e do menu principal
 {
-	int tamanhoVet = 40; // controlador do tamnho do vetor
+	int tamanhoVet = 40; // controlador do tamanho do vetor
 	int quantidadeDeRegistros = 0; // controlador da quantidade de registros
 	int tipoDeArqAberto; // armazena o tipo do arquivo que foi aberto
 	int opcao; // opção do menu
