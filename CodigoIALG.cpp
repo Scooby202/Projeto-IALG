@@ -1,3 +1,6 @@
+//Tema do Projeto: Cadastro de atletas em um hotel.
+//Nomes dos Membros do Grupo: Erick David Forzan Pereira, Lívia Maria Almeida Silva e Maurício Vicente Sandim.
+
 #include <iostream>
 #include <fstream>
 #include <algorithm>
