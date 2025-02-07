@@ -837,7 +837,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						}
 					} while (aux.empty() or not validacaoInt(aux)); // repetição para que o usuário digite um passaporte válido
 
-					if (buscaBinariaPassaporte(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para vericação da existencia não existencia do novo passaporte
+					if (buscaBinariaPassaporte(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para vericação de não existencia do novo passaporte
 					{	
 						aModificar.passaporte = numeroAux;
 						cout << "Número de passaporte modificado!!" << endl << endl;
