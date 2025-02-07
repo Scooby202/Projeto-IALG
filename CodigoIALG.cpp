@@ -264,7 +264,7 @@ int leituraTipado(atletas* &registros, int &tamanhoVet, int &quantidadeDeRegistr
 	cout << "Digite o nome do arquivo: ";
 
 	getline(cin, nomeArqAberto);
-	nomeArqAberto += ".txt"; // adição da extensão do arquivo
+	nomeArqAberto += ".bin"; // adição da extensão do arquivo
 
 	cout << endl;
 
@@ -1112,7 +1112,7 @@ void gravarDados(int quantidadeDeRegistros, int tipoArqAberto, atletas* registro
 				cout << "======================================================================================================================" << endl << endl;
 				cout << "Qual o nome do arquivo? ";
 				getline(cin, nome);
-				nome += ".txt"; // adição da extensão do arquivo
+				nome += ".bin"; // adição da extensão do arquivo
 				cout << endl;
 			}
 
