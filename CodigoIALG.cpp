@@ -727,7 +727,7 @@ void buscaDeRegistro(int quantidadeDeRegistros, atletas* registros) // possibili
 						}
 					} while (aux.empty() or not validacaoInt(aux)); // repetição para que o usuário digite um identificador válido
 
-					if (buscaBinariaID(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para vericação da existencia não existencia do novo identificador
+					if (buscaBinariaID(quantidadeDeRegistros, numeroAux, registros) == -1) // condicional para verificação da não existencia do novo identificador
 					{
 						aModificar.identificador = numeroAux;
 						cout << "Identificador modificado!!" << endl << endl;
